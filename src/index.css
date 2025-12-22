@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: Medieval Sharp;
+  src: url("../src/assets/fonts/Cinzel_Decorative/CinzelDecorative-Regular.ttf");
+}
+@font-face {
+  font-family: Uncial Antiqua;
+  src: url("../src/assets/fonts/Uncial_Antiqua/UncialAntiqua-Regular.ttf");
+}
+@theme {
+  --font-medieval: Medieval Sharp, "sans-serif";
+  --font-celtic: Uncial Antiqua, "sans-serif";
+}
+
