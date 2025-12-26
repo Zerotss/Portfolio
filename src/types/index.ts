@@ -18,3 +18,13 @@ export interface Project {
     github: string;
     demo: string;
   }
+  export interface Achievement {
+    title: string;
+    issuer: string;
+    year: number;
+    description: string;
+    link?: string;
+    technologies: TechMapKey[];
+    type: "certificate" | "award";
+}
+  

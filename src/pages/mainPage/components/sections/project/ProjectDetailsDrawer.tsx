@@ -4,6 +4,8 @@ import Tag from "../../Tag";
 import type { Project } from "../../../../../types";
 import { useEffect } from "react";
 import useMenuStore from "../../../../../stores/MenuStore";
+import EmblaCarousel from "embla-carousel";
+import ImageCarousel from "./carousel/ImageCarrousel";
 
 interface ProjectDetailsDrawerProps {
     project: Project | null;
@@ -28,23 +30,22 @@ export default function ProjectDetailsDrawer({
                 <>
                     {/* OVERLAY */}
                     <motion.div
-                        className="fixed inset-0 z-40 bg-black/10 backdrop-blur-sm"
+                        className="fixed inset-0 z-40 bg-cyan-950/20  backdrop-blur-sm"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
-                        onClick={()=>{onClose()}}
+                        onClick={() => { onClose() }}
                     />
 
                     {/* DRAWER */}
                     <motion.aside
                         className="
-              fixed top-0 right-0 z-50 h-full
-              w-full md:w-[45%] lg:w-[40%]
-              bg-white/10 backdrop-blur-xl
-              border-l border-white/20
-              shadow-2xl
-              overflow-y-auto
-            "
+                                fixed top-0 right-0 z-50 h-full
+                                w-full md:w-[45%] lg:w-[40%]
+                                bg-white/50 backdrop-blur-xl
+                                border-l border-cyan-200/40
+                                shadow-2xl
+                                overflow-y-auto"
                         initial={{ x: "100%" }}
                         animate={{ x: 0 }}
                         exit={{ x: "100%" }}
@@ -52,7 +53,7 @@ export default function ProjectDetailsDrawer({
                     >
                         {/* HEADER */}
                         <div className="flex items-center justify-between p-6 border-b border-white/10">
-                            <h3 className="text-3xl font-semibold text-cyan-600 ">
+                            <h3 className="text-3xl font-semibold text-cyan-700 ">
                                 {project.title}
                             </h3>
 
@@ -61,7 +62,7 @@ export default function ProjectDetailsDrawer({
                                 className="p-2 rounded-xl hover:bg-white/10 transition"
                                 aria-label="Close project details"
                             >
-                                <X className="w-5 h-5 text-white" />
+                                <X className="w-5 h-5 text-slate-900" />
                             </button>
                         </div>
 
@@ -69,17 +70,17 @@ export default function ProjectDetailsDrawer({
                         <div className="p-8 space-y-10">
                             {/* INTRODUCTION */}
                             <section className="space-y-3">
-                                <h4 className="text-lg font-semibold text-white">
+                                <h4 className="text-lg font-semibold text-slate-900">
                                     Introduction
                                 </h4>
-                                <p className="text-white/80 leading-relaxed">
+                                <p className="text-slate-900/80 leading-relaxed">
                                     {project.introduction}
                                 </p>
                             </section>
 
                             {/* TOOLS & TECHNOLOGIES */}
                             <section className="space-y-4">
-                                <h4 className="text-lg font-semibold text-white">
+                                <h4 className="text-lg font-semibold text-slate-900">
                                     Tools & Technologies
                                 </h4>
                                 <div className="flex flex-wrap gap-3">
@@ -88,13 +89,14 @@ export default function ProjectDetailsDrawer({
                                     ))}
                                 </div>
                             </section>
+                            <ImageCarousel images={project.images} />
 
                             {/* LEARNINGS */}
                             <section className="space-y-4">
-                                <h4 className="text-lg font-semibold text-white">
+                                <h4 className="text-lg font-semibold text-slate-900">
                                     Key Learning Outcomes
                                 </h4>
-                                <ul className="list-disc list-inside space-y-2 text-white/80">
+                                <ul className="list-disc list-inside space-y-2 text-slate-900/80">
                                     {project.learnings.map((item, i) => (
                                         <li key={i}>{item}</li>
                                     ))}

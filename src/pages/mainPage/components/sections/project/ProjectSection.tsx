@@ -34,7 +34,7 @@ export default function ProjectsSection({ id }: ProjectsSectionProps) {
       "Separación clara de responsabilidades entre capas",
     ],
 
-    images: ["src/assets/imgs/projects/designIt.png"],
+    images: ["src/assets/imgs/projects/designIt.png","src/assets/imgs/projects/designIt.png","src/assets/imgs/projects/designIt.png"],
 
     github: "https://github.com/",
     demo: "https://demo.com",
