@@ -12,8 +12,8 @@ export default function MainCircle() {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ opacity: 1, scale: [1.4, 0.9, 1] }}
         transition={{
-          scale: { repeat: 0, duration: 0.5, ease: "easeOut" },
-          opacity: { repeat: 0, duration: 0.5, ease: "anticipate" },
+          scale: { repeat: 0, duration: 1, ease: "easeOut" },
+          opacity: { repeat: 0, duration: 1, ease: "anticipate" },
         }}
         onAnimationComplete={() => {
           setState("Main");

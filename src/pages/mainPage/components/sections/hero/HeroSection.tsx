@@ -24,7 +24,7 @@ export default function HeroSection({ id }: HeroSectionProps) {
 
         {/* Redes sociales */}
         <div className="flex justify-center lg:justify-start gap-4">
-          <SocialIcon icon="github" href="https://github.com/Zerotss" color="gray" />
+          <SocialIcon icon="github" href="https://github.com/Zerotss" color="cyan" />
           <SocialIcon
             icon="linkedin"
             href="https://www.linkedin.com/in/%C3%A1ngel-paredes-ballesteros-120732292/"

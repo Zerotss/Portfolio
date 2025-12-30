@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 
-export type AppStateType = 'Landing' | 'TransitionDOWN' | 'TransitionUP' | 'Main';
+export type AppStateType = 'Landing' | 'TransitionDOWN' | 'Main';
 
 interface AppState {
     currentState: AppStateType;

@@ -40,7 +40,7 @@ export default function ProjectsSection({ id }: ProjectsSectionProps) {
     demo: "https://demo.com",
   };
   return (
-    <section id={id} className="bg-cyan-700 py-20 px-6 md:px-12 lg:px-20 flex flex-col items-center">
+    <section id={id} className="bg-cyan-700 py-20 px-6 flex flex-col items-center rounded-2xl m-8">
       <h2 className="text-3xl md:text-4xl font-semibold text-white mb-12 text-center">Proyectos</h2>
 
       <div className="w-full max-w-6xl flex flex-col">

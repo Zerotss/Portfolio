@@ -5,112 +5,93 @@ import OuterCircle from "../../../assets/circles/outerCircle.svg?react";
 import RotatingCircle from "./RotatingCircle";
 
 type AnimatedBackgroundCirclesProps = {
-  triggerRef: React.RefObject<(() => void) | null>;
   onExitComplete: () => void;
 };
 
+const EASE = [0.6, 0, 0.4, 1] as const;
+
 export default function AnimatedBackgroundCircles({
-  triggerRef,
   onExitComplete,
 }: AnimatedBackgroundCirclesProps) {
   const [stopped, setStopped] = useState(false);
-  const [showOuter, setShowOuter] = useState(false);
 
+  const mid = useAnimation();
+  const outer = useAnimation();
 
-  const midControls = useAnimation();
-  const outerControls = useAnimation();
-
-  // 🔄 Control de parada
   useEffect(() => {
-    if (triggerRef) {
-      triggerRef.current = async () => {
-        setStopped(true);
-        await midControls.stop();
-        await outerControls.stop();
-        onExitComplete();
-      };
-    }
-  }, [triggerRef, midControls, outerControls, onExitComplete]);
-
-  // 🌌 Secuencia optimizada y fluida
-  useEffect(() => {
-    const sequence = async () => {
-      // Etapa 1: Fade-in y aparición suave del círculo medio
-      await midControls.start({
-        opacity: [0, 1],
-        scale: [0.5, 1],
-        rotate: 120,
-        transition: { duration: 1, ease: [0.6, 0.05, 0.4, 1] },
+    const run = async () => {
+      // Mid entrada
+      await mid.start({
+        opacity: 1,
+        scale: 1,
+        rotate: 90,
+        transition: { duration: 0.9, ease: EASE },
       });
-
-      // Mostrar el círculo exterior con un pequeño delay
-      setShowOuter(true);
-      await new Promise((r) => setTimeout(r, 120));
-
-
+  
+      // Animar ambos
       await Promise.all([
-        midControls.start({
-          rotate: -60,
+        mid.start({
+          rotate: -45,
+          transition: { duration: 0.7, ease: EASE },
+        }),
+        outer.start({
           opacity: 1,
           scale: 1,
-          transition: { duration: 0.8, ease: [0.6, 0, 0.4, 1] },
-        }),
-        outerControls.start({
-          opacity: 1,
-          scale: [0.8, 1],
-          rotate: [0, -30],
-          transition: { duration: 0.8, ease: [0.6, 0, 0.4, 1] },
+          rotate: -20,
+          transition: { duration: 0.7, ease: EASE },
         }),
       ]);
+  
+      setStopped(true);
+      onExitComplete();
     };
-
-    sequence();
-  }, [midControls, outerControls]);
+  
+    run();
+  }, [mid, outer, onExitComplete]);
+  
 
   return (
-    <div className="relative w-[100vmax] h-[100vmax] ">
+    <div className="relative w-[100vmax] h-[100vmax]">
+      {/* Mid circle */}
       <motion.div
-        style={{ willChange: "transform, opacity" }}
         className="absolute inset-0 flex items-center justify-center"
-        animate={midControls}
-        initial={{ opacity: 0, scale: 0.5 }}
+        initial={{ opacity: 0, scale: 0.6, rotate: 0 }}
+        animate={mid}
+        style={{ willChange: "transform, opacity" }}
       >
         <RotatingCircle
           stopped={stopped}
           SVG={MidCircle}
           rotationDirection="clockwise"
-          speed={10}
+          speed={5}
           tailWindStyles="
-    w-[32%] h-[32%]
-    text-cyan-600
-    opacity-80
-  "
+            w-[32%] h-[32%]
+            text-cyan-600
+            opacity-80
+          "
         />
-
       </motion.div>
 
-      {showOuter && (
+      {/* Outer circle */}
+      
         <motion.div
-          style={{ willChange: "transform, opacity" }}
+          initial={{ opacity: 0, scale: 0.85, rotate: 0 }}
+          animate={outer}
           className="absolute inset-0 flex items-center justify-center"
-          animate={outerControls}
-          initial={{ opacity: 0, scale: 0.7 }}
         >
           <RotatingCircle
             stopped={stopped}
             SVG={OuterCircle}
             rotationDirection="counterclockwise"
-            speed={10}
+            speed={5}
             tailWindStyles="
-    w-[40%] h-[40%]
-    text-gray-800
-    opacity-60
-  "
+              w-[40%] h-[40%]
+              text-gray-500
+              opacity-60
+            "
           />
-
-
         </motion.div>
-      )}
+      
     </div>
   );
 }

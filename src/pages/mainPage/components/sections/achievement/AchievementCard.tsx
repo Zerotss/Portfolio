@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Award, GraduationCap } from "lucide-react";
+import Tag from "../../Tag";
 import type { Achievement } from "../../../../../types";
 
 interface AchievementCardProps {
@@ -7,8 +8,7 @@ interface AchievementCardProps {
 }
 
 export default function AchievementCard({ achievement }: AchievementCardProps) {
-  const Icon =
-    achievement.type === "award" ? Award : GraduationCap;
+  const Icon = achievement.type === "award" ? Award : GraduationCap;
 
   return (
     <motion.div
@@ -39,11 +39,13 @@ export default function AchievementCard({ achievement }: AchievementCardProps) {
       </div>
 
       {/* RIGHT */}
-      <div className="flex items-center gap-4 shrink-0">
+      <div className="flex items-center gap-3 shrink-0">
         {achievement.technologies && (
-          <span className="hidden md:block text-gray-400">
-            {achievement.technologies.join(" · ")}
-          </span>
+          <div className="hidden md:flex flex-wrap gap-1">
+            {achievement.technologies.map((tech) => (
+              <Tag key={tech} icon={tech} size="sm" />
+            ))}
+          </div>
         )}
 
         {achievement.link && (

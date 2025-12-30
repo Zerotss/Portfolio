@@ -8,6 +8,8 @@ import HeroSection from "./components/sections/hero/HeroSection";
 import AboutSection from "./components/sections/about/AboutSection";
 import ProjectsSection from "./components/sections/project/ProjectSection";
 import AchievementSection from "./components/sections/achievement/AchievementSection";
+import ContactSection from "./components/sections/contact/ContactSection";
+import Footer from "./components/sections/footer/Footer";
 
 export default function MainPage() {
 
@@ -53,35 +55,14 @@ export default function MainPage() {
                             <JourneyCardList journeyData={journeyData}></JourneyCardList>
 
                         </div>
-                    </section>
-                    <section id="projects" >
                         <ProjectsSection id="projects" />
+
                     </section>
                     
                     <AchievementSection id="achievement"/>
                     {/* Farewell Section */}
-
-                    
-                    <motion.div
-                        className="text-center  bg-cyan-800"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
-
-                        <p className="text-gray-400  max-w-2xl mx-auto">
-                            Si te ha gustado mi trabajo y quieres colaborar en algún proyecto, no dudes en contactarme. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nulla facere aliquam facilis veniam itaque quibusdam illum dolores laboriosam commodi, architecto dignissimos, fugiat deserunt odio provident adipisci alias optio eveniet. Non, id vero nostrum sequi, ullam aliquid porro eligendi totam tempora minima natus sit cumque dolore dicta labore earum nulla obcaecati mollitia exercitationem ut saepe! Provident, architecto maxime. Fugit excepturi rerum eligendi illo ad explicabo dolorum harum libero, maiores reprehenderit ipsum nisi, tenetur dolorem ullam tempora voluptatibus. Exercitationem cumque explicabo asperiores veritatis similique saepe minus facilis aspernatur. Placeat, illo atque! Dolores ipsum nemo deserunt pariatur illum numquam adipisci doloribus, vero natus?
-                        </p>
-
-                    </motion.div>
                     {/* Footer */}
-                    <section id="contact">
-                        <div className="bg-black/90 border-t border-white/10 ">
-                            <div className="text-center text-gray-500">
-                                <p> Ángel Paredes Ballesteros ©2025</p>
-                            </div>
-                        </div>
-                    </section>
+                    <Footer/>
                 </motion.div>
             </div>
         </>

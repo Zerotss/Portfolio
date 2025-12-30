@@ -1,7 +1,7 @@
 import { useState } from "react";
 import type { Achievement, Project } from "../../../../../types";
-import useMenuStore from "../../../../../stores/MenuStore";
 import AchievementCard from "./AchievementCard";
+import ContactSection from "../contact/ContactSection";
 
 
 
@@ -52,11 +52,11 @@ export default function AchievementSection({ id }: AchievementSectionProps) {
         },
     ];
     return (
-        <section
+        <section 
             id={id}
-            className="pt-8 mx-auto p-20 backdrop-blur-xs border-white/20 shadow-lg"
+            className="pt-8 mx-auto  py-20 backdrop-blur-xs border-white/20 shadow-lg"
         >
-            <h2 className="text-5xl font-serif mb-10 text-center text-cyan-700 mt-10">
+            <h2 className="text-5xl font-serif mb-20 text-center text-cyan-700 mt-10">
                 Certifications & Awards
             </h2>
 
@@ -65,6 +65,7 @@ export default function AchievementSection({ id }: AchievementSectionProps) {
                     <AchievementCard key={item.title} achievement={item} />
                 ))}
             </div>
+            <ContactSection id="contact"/>
 
         </section>
     );
