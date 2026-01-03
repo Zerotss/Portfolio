@@ -14,6 +14,7 @@ export default function HeroSection({ id }: HeroSectionProps) {
       className="
       px-20
     sm:px-10 md:px-15 lg:px-20 
+    
   "
     >
       <div className="max-w-5xl flex flex-col md:flex-row items-center mx-auto">
@@ -24,6 +25,7 @@ export default function HeroSection({ id }: HeroSectionProps) {
       flex-1
       flex flex-col
       items-center md:items-start
+       z-10
       text-center md:text-left
       space-y-4
       mt-10 

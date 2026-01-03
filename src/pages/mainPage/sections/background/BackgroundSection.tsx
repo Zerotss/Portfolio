@@ -7,9 +7,9 @@ interface BackgroundSectionProps {
 export default function BackgroundSection({ id }: BackgroundSectionProps) {
   return (
 
-    <section id={id} className="px-10 sm:px-10 md:px-15 lg:px-20 py-16  items-center justify-center space-y-6  z-10">
-      <div className="max-w-5xl mx-auto text-center  ">
-        <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] mb-20 text-cyan-600 font-medieval sm:text-center md:text-left ">
+    <section id={id} className="px-10 sm:px-10 md:px-15 lg:px-20 py-16  items-center justify-center space-y-6 ">
+      <div className="max-w-5xl mx-auto text-center  z-10 ">
+        <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] relative mb-15 text-cyan-600 font-medieval sm:text-center md:text-left  ">
           Background
         </h2>
 

@@ -4,78 +4,88 @@ import Tag from "../../components/Tag";
 import ProjectButtons from "./ProjectButtons";
 
 interface ProjectCardProps {
-    project: Project;
-    watchMore: () => void;
+  project: Project;
+  watchMore: () => void;
 }
-export default function ProjectCard({
-    project,
-    watchMore
-}: ProjectCardProps) {
 
-
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-            viewport={{ once: true }}
-            whileHover={{ scale: 1.01 }}
-            className="
-        relative w-full rounded-3xl
-        overflow-hidden
-        bg-white/10 backdrop-blur-xl
+export default function ProjectCard({ project, watchMore }: ProjectCardProps) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, ease: "easeOut" }}
+      viewport={{ once: true }}
+      whileHover={{ scale: 1.01 }}
+      className="
+        relative w-full rounded-3xl overflow-hidden
+        bg-white/10
+        md:backdrop-blur-xl
         shadow-[0_8px_40px_rgba(0,0,0,0.25)]
+         border border-white/20   
+         
       "
-        >
-            <div className="flex flex-col md:flex-row">
-                {/* TEXT */}
-                <div className="flex-1 p-8 flex flex-col justify-center space-y-4">
-                    <h3 className="text-[clamp(1.5rem,3.5vw,2.5rem)] font-light text-white text-center md:text-start">
-                        {project.title}
-                    </h3>
+    >
+      <div className="flex flex-col md:flex-row">
 
-                    <p className="text-white/80 leading-relaxed text-[clamp(0.95rem,1.5vw,1.2rem)] py-2 text-center md:text-start">
-                        {project.introduction[0].substring(0, 200) + "..."}
-                    </p>
-
-                    <div className="flex flex-wrap gap-2 justify-center md:justify-start">
-                        {project.technologies.map((tech) => (
-                            <Tag key={tech} icon={tech} size="sm" />
-                        ))}
-                    </div>
-                </div>
-
-                {/* IMAGE */}
-                <div className="flex-1 relative group overflow-hidden">
-                    <div className="w-full h-full aspect-[16/9] md:aspect-auto">
-                        <img
-                            src={project.images[0]}
-                            loading="lazy"
-                            className="
-            w-full h-full object-cover object-center
-            transition-transform duration-500 ease-out
-            group-hover:scale-105 brightness-102 contrast-102
+        {/* ================= TEXT (DESKTOP) ================= */}
+        <div
+          className="
+            hidden md:flex flex-1
+            p-8
+            flex-col justify-center
+            space-y-4
           "
-                        />
-                    </div>
+        >
+          <h3 className="text-[clamp(1.6rem,3vw,2.4rem)] font-light text-white">
+            {project.title}
+          </h3>
 
-                    {/* Overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/60 via-white/10 to-transparent" />
+          <p className="text-white/80 leading-relaxed text-[clamp(1rem,1.2vw,1.15rem)]">
+            {project.introduction[0].substring(0, 200)}...
+          </p>
 
-                    <div
-                        className="
-                        absolute bottom-4 right-4
-                        flex flex-col sm:flex-row md:flex-col xl:flex-row
-                        gap-2 md:gap-3
-                        items-end
-                
-                      "
-                    >
-                        <ProjectButtons project={project} watchMore={watchMore} />
-                    </div>
-                </div>
-            </div>
-        </motion.div>
-    );
+          <div className="flex flex-wrap gap-2">
+            {project.technologies.map((tech) => (
+              <Tag key={tech} icon={tech} size="sm" />
+            ))}
+          </div>
+        </div>
+
+        {/* ================= IMAGE ================= */}
+        <div className="relative flex-1 overflow-hidden rounded-2xl group">
+        <div className="relative w-full aspect-[16/9] md:h-full md:aspect-[16/9]">
+        <img
+              src={project.images[0]}
+              loading="lazy"
+              className="
+                w-full h-full object-cover
+                transition-transform duration-500 ease-out
+                group-hover:scale-105
+              "
+            />
+          </div>
+
+          {/* Overlay solo desktop */}
+          <div className=" absolute inset-0 bg-gradient-to-t from-cyan-900/60 via-white/10 to-transparent" />
+
+          {/* BOTONES OVERLAY (DESKTOP) */}
+          <div className="hidden md:flex absolute bottom-4 right-4">
+            <ProjectButtons project={project} watchMore={watchMore} />
+          </div>
+        </div>
+
+        {/* ================= MOBILE CONTENT ================= */}
+        <div className="md:hidden px-4 py-3 space-y-6">
+          <h3 className="text-white font-light text-4xl text-center ">
+            {project.title}
+          </h3>
+
+          <div className="flex justify-center">
+            <ProjectButtons project={project} watchMore={watchMore} />
+          </div>
+        </div>
+
+      </div>
+    </motion.div>
+  );
 }
-

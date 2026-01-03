@@ -82,6 +82,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
                     transition-all duration-300
                     hover:bg-cyan-700/80
                     hover:text-white
+                    cursor-pointer
           shadow-lg
         "
             >
@@ -100,6 +101,7 @@ export default function ImageCarousel({ images }: ImageCarouselProps) {
                     transition-all duration-300
                     hover:bg-cyan-700/80
                     hover:text-white
+                    cursor-pointer
                     shadow-lg
                 "
             >

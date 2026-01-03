@@ -1,9 +1,9 @@
 import { useState } from "react";
-import ProjectCard from "./ProjectCard";
-import type { Project } from "../../../../types";
-import ProjectDetailsDrawer from "./ProjectDetailsDrawer";
-import useMenuStore from "../../../../stores/MenuStore";
 import { projectsData } from "../../../../data/AppData";
+import useMenuStore from "../../../../stores/MenuStore";
+import type { Project } from "../../../../types";
+import ProjectCard from "./ProjectCard";
+import ProjectDetailsDrawer from "./ProjectDetailsDrawer";
 
 
 
@@ -13,37 +13,40 @@ interface ProjectsSectionProps {
 
 export default function ProjectsSection({ id }: ProjectsSectionProps) {
   const [activeProject, setActiveProject] = useState<Project | null>(null);
-  const { openMenu, closeMenu,isMobile } = useMenuStore();
+  const { openMenu, closeMenu, isMobile } = useMenuStore();
   return (
-    <section id={id} className="bg-cyan-700 px-10 sm:px-10 md:px-15 lg:px-20 py-16 flex flex-col items-center rounded-4xl mr-8 ml-8 space-y-6">
+    <>
+      <section id={id} className="bg-cyan-700 px-10 sm:px-10 md:px-15 lg:px-20 py-16 flex flex-col items-center rounded-4xl mr-8 ml-8 space-y-6">
 
 
-      <div className="w-full max-w-5xl">
-      <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] font-medieval text-white mb-20 text-center md:text-left">Proyectos</h2>
+        <div className=" max-w-5xl z-10">
+          <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] font-medieval text-white mb-15  text-center md:text-left">Proyectos</h2>
 
-        <div className=" max-w-full flex flex-col gap-10">
+          <div className=" max-w-full flex flex-col gap-10">
 
-          {projectsData.map((item) => (
-            <ProjectCard
-              project={item}
-              watchMore={() => {
-                setActiveProject(item)
-                closeMenu()
-              }} />
-          ))}
+            {projectsData.map((item) => (
+              <ProjectCard
+                project={item}
+                watchMore={() => {
+                  setActiveProject(item)
+                  closeMenu()
+                }} />
+            ))}
+          </div>
+
         </div>
 
-      </div>
+      </section>
       <ProjectDetailsDrawer
         project={activeProject}
         onClose={() => {
           setActiveProject(null)
-          if(!isMobile){
+          if (!isMobile) {
             openMenu()
           }
         }
         }
       />
-    </section>
+    </>
   );
 }

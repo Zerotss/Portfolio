@@ -17,9 +17,9 @@ export default function JourneyCard({ item, index }: JourneyCardProps) {
         >
             <div className={`flex flex-col items-center text-center mx-auto  w-full sm:w-auto ${alignRight? "md:text-left md:items-start":"md:text-right md:items-end"}`}>
                 {item.type === "work" ? (
-                    <Briefcase className="w-3 h-3 text-cyan-600 opacity-80 " />
+                    <Briefcase className="w-5 h-5 text-cyan-600 opacity-80 " />
                 ) : (
-                    <GraduationCap className="w-3 h-3 text-cyan-600 opacity-80" />
+                    <GraduationCap className="w-5 h-5 text-cyan-600 opacity-80" />
                 )}
                 <span className="text-cyan-600 font-medieval font-semibold text-[clamp(0.95rem,1.3vw,1.1rem)] tracking-[0.15em] uppercase">
                     {item.year}

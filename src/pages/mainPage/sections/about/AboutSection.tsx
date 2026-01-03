@@ -17,7 +17,7 @@ export default function AboutSection({ id }: AboutSectionProps) {
       id={id}
       className="bg-cyan-600 text-white px-10 sm:px-10 md:px-15 lg:px-20 py-16 flex flex-col items-center justify-center space-y-6  "
     >
-      <div className="max-w-5xl text-center md:text-left">
+      <div className="max-w-5xl text-center md:text-left z-10">
         <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] mb-4 font-medieval">
           About Me
         </h2>

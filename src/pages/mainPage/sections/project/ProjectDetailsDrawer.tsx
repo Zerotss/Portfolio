@@ -59,7 +59,7 @@ export default function ProjectDetailsDrawer({
 
                             <button
                                 onClick={onClose}
-                                className="p-2 rounded-xl hover:bg-white/40 transition-colors"
+                                className="p-2 rounded-xl hover:bg-white/40 transition-colors cursor-pointer"
                                 aria-label="Close project details"
                             >
                                 <X className="w-8 h-8 text-cyan-800" />
