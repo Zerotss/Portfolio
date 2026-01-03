@@ -1,4 +1,3 @@
-import { useEffect, useRef } from 'react';
 import { useAppStore } from '../../stores/AppStore';
 import AnimatedBackgroundCircles from './components/AnimatedBackgroundCircles';
 import LandingPageAnimationWrapper from './components/LandingPageAnimationWrapper';

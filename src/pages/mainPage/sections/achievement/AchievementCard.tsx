@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ExternalLink, Award, GraduationCap } from "lucide-react";
-import Tag from "../../Tag";
-import type { Achievement } from "../../../../../types";
+import Tag from "../../components/Tag";
+import type { Achievement } from "../../../../types";
 
 interface AchievementCardProps {
   achievement: Achievement;

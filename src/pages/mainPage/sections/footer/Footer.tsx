@@ -1,4 +1,3 @@
-import SocialIcon from "../../SocialIcon";
 
 export default function Footer() {
     return (

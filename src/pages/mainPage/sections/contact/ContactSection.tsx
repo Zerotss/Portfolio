@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
-import SocialIcon from "../../SocialIcon";
-import { FaRegFileAlt } from "react-icons/fa";
-import { BsFileEarmarkText } from "react-icons/bs";
+import SocialIcon from "../../components/SocialIcon";
+import { personalData } from "../../../../data/AppData";
 
 interface ContactSectionProps {
   id: string;
@@ -42,20 +41,19 @@ export default function ContactSection({ id }: ContactSectionProps) {
 
             <a
               href="mailto:donpuentito@gmail.com"
-              className="text-xl text-cyan-100 hover:text-cyan-300 transition-colors"
+              className="text-xl text-cyan-100 font-light hover:text-cyan-300 transition-colors"
             >
-              donpuentito@gmail.com
+              {personalData.gmail}
             </a>
           </div>
 
           {/* Right: socials */}
           <div className="flex md:justify-end">
             <div className="flex gap-6">
-              <SocialIcon icon="github" href="https://github.com/Zerotss" color="cyan" />
+              <SocialIcon socialName="github" href={personalData.gitHub} />
               <SocialIcon
-                icon="linkedin"
-                href="https://www.linkedin.com/in/%C3%A1ngel-paredes-ballesteros-120732292/"
-                color="blue"
+                socialName="linkedin"
+                href={personalData.linkedIn}
               />
             </div>
           </div>

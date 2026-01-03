@@ -8,7 +8,7 @@ type AnimatedBackgroundCirclesProps = {
   onExitComplete: () => void;
 };
 
-const EASE = [0.6, 0, 0.4, 1] as const;
+const EASE = [1, 0, 0.5, 1] as const;
 
 export default function AnimatedBackgroundCircles({
   onExitComplete,
@@ -25,13 +25,13 @@ export default function AnimatedBackgroundCircles({
         opacity: 1,
         scale: 1,
         rotate: 90,
-        transition: { duration: 0.9, ease: EASE },
+        transition: { duration: 0.7, ease: EASE },
       });
   
       // Animar ambos
       await Promise.all([
         mid.start({
-          rotate: -45,
+          rotate: 180,
           transition: { duration: 0.7, ease: EASE },
         }),
         outer.start({

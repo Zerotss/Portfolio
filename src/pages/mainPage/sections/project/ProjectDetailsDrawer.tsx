@@ -1,0 +1,108 @@
+import { AnimatePresence, motion } from "framer-motion";
+import { X } from "lucide-react";
+import { useEffect } from "react";
+import type { Project } from "../../../../types";
+import Tag from "../../components/Tag";
+import ImageCarousel from "./carousel/ImageCarrousel";
+
+interface ProjectDetailsDrawerProps {
+    project: Project | null;
+    onClose: () => void;
+}
+
+export default function ProjectDetailsDrawer({
+    project,
+    onClose,
+}: ProjectDetailsDrawerProps) {
+
+    useEffect(() => {
+        if (!project) {
+            document.body.style.overflow = "auto"
+            return;
+        }
+        document.body.style.overflow = project ? "hidden" : "";
+    }, [project]);
+    return (
+        <AnimatePresence>
+            {project && (
+                <>
+                    {/* OVERLAY */}
+                    <motion.div
+                        className="fixed inset-0 z-150 bg-cyan-900/50  backdrop-blur-md h-[100%]"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        onClick={() => { onClose() }}
+                    />
+
+                    {/* DRAWER */}
+                    <motion.aside
+                        className="
+    fixed top-0 right-0 z-160 h-full
+    w-full md:w-[50%] lg:w-[40%]
+   bg-white/75 backdrop-blur-sm
+    border-l border-cyan-200/40
+    shadow-2xl
+    overflow-y-auto
+  "
+                        initial={{ x: "100%" }}
+                        animate={{ x: 0 }}
+                        exit={{ x: "100%" }}
+                        transition={{ duration: 0.45, ease: "easeOut" }}
+                    >
+                        {/* HEADER */}
+                        <div className=" px-5 sm:px-5 md:px-6 lg:px-8 py-10 space-y-5">
+                        <div className="flex items-center justify-between  border-b border-cyan-100/30">
+                            <h3 className="font-medieval text-[clamp(1.5rem,3.5vw,2.5rem)] text-cyan-800 drop-shadow-sm">
+                                {project.title}
+                            </h3>
+
+                            <button
+                                onClick={onClose}
+                                className="p-2 rounded-xl hover:bg-white/40 transition-colors"
+                                aria-label="Close project details"
+                            >
+                                <X className="w-8 h-8 text-cyan-800" />
+                            </button>
+
+
+
+                            
+                        </div>
+                         {/* CONTENT */}
+                         <h4 className="font-light text-[clamp(1.5rem,2.5vw,1.9rem)] text-cyan-700 drop-shadow-sm">
+                                Context
+                            </h4>
+                            <p className="text-cyan-900/90 leading-relaxed text-[clamp(0.95rem,1.5vw,1.2rem)]">
+                                {project.introduction}
+                            </p>
+
+                        {/* TOOLS & TECHNOLOGIES */}
+                        <div className="flex flex-wrap gap-3">
+                            {project.technologies.map((tech) => (
+                                <Tag key={tech} icon={tech} size="sm" />
+                            ))}
+                        </div>
+
+                        <ImageCarousel images={project.images} />
+
+                        {/* LEARNINGS */}
+                            <h4 className="font-light text-[clamp(1.5rem,2.5vw,1.9rem)] text-cyan-700 drop-shadow-sm">
+                                Key Learning Outcomes
+                            </h4>
+                            <ul className="list-disc list-inside text-cyan-900/80 leading-loose text-[clamp(0.95rem,1.5vw,1.2rem)]">
+                                {project.learnings.map((item, i) => (
+                                    <li key={i}>{item}</li>
+                                ))}
+                            </ul>
+
+                            </div>
+
+
+                       
+                    </motion.aside>
+                </>
+            )}
+        </AnimatePresence>
+    );
+}

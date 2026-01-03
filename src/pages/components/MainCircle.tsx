@@ -12,8 +12,8 @@ export default function MainCircle() {
         initial={{ scale: 0, opacity: 0 }}
         animate={{ opacity: 1, scale: [1.4, 0.9, 1] }}
         transition={{
-          scale: { repeat: 0, duration: 1, ease: "easeOut" },
-          opacity: { repeat: 0, duration: 1, ease: "anticipate" },
+          scale: { repeat: 0, duration: 0.7, ease: "easeOut" },
+          opacity: { repeat: 0, duration: 0.7, ease: "anticipate" },
         }}
         onAnimationComplete={() => {
           setState("Main");
@@ -28,7 +28,7 @@ export default function MainCircle() {
           }}
           style={{ willChange: "transform" }}
         >
-          <InnerCircle className="h-[120vmax] w-[130vmax] text-gray-400 z-0" />
+          <InnerCircle className=" h-[150vmax] w-[143vmax] md:h-[120vmax] md:w-[140vmax] text-gray-400 z-0" />
         </motion.div>
       </motion.div>
     </div>

@@ -10,7 +10,7 @@ export default function WelcomeTitle() {
         animate={{ opacity: [0, 1, 1, 0] }}
         transition={{
           times: [0, 0.6, 0.8, 1],
-          duration:1,
+          duration:0.7,
           ease: ["easeInOut", "backOut"],
         }}
       >

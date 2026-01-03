@@ -1,4 +1,4 @@
-import type { TechMapKey } from "../pages/mainPage/components/Tag";
+import type { techMap } from "../data/AppData";
 
 export interface JourneyItem {
     type: "work" | "study";
@@ -27,4 +27,6 @@ export interface Project {
     technologies: TechMapKey[];
     type: "certificate" | "award";
 }
+export type TechMapKey = keyof typeof techMap
+
   
