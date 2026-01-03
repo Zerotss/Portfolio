@@ -9,6 +9,7 @@ import BackgroundSection from "./sections/background/BackgroundSection";
 import Footer from "./sections/footer/Footer";
 import HeroSection from "./sections/hero/HeroSection";
 import ProjectsSection from "./sections/project/ProjectSection";
+import ContactSection from "./sections/contact/ContactSection";
 
 export default function MainPage() {
 
@@ -31,9 +32,9 @@ export default function MainPage() {
                 <AboutSection id="about" />
                 <BackgroundSection id="background" />
             </motion.div>
-
             <ProjectsSection id="projects" />
             <AchievementSection id="achievement" />
+            <ContactSection id="contact"/>
             <Footer />
         </>
     );

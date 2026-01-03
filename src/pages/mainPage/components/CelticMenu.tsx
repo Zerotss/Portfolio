@@ -48,7 +48,9 @@ export default function CelticMenu({ menuItems }: CelticMenuProps) {
           }
         }
       });
-    });
+    },{
+      threshold: 0.2,
+      });
 
     menuItems.forEach((item) => {
       const section = document.getElementById(item.id);
@@ -92,7 +94,7 @@ export default function CelticMenu({ menuItems }: CelticMenuProps) {
           <div className="relative">
             <button
               onClick={isOpen ? closeMenu : openMenu}
-              className="w-12 h-12 rounded-full bg-white/70 backdrop-blur-md flex items-center justify-center border border-gray-300 shadow-md"
+              className="w-12 h-12 rounded-full bg-white/70 backdrop-blur-md flex items-center justify-center border border-gray-300 shadow-md cursor-pointer"
             >
               <div className="space-y-1">
                 <span
@@ -121,7 +123,7 @@ export default function CelticMenu({ menuItems }: CelticMenuProps) {
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`px-4 py-2 text-sm  text-left rounded-md transition-colors duration-200 ${activeSection === item.id
+                    className={`px-4 py-2 text-sm  text-left rounded-md transition-colors font-medieval duration-200 ${activeSection === item.id
                       ? "text-cyan-600"
                       : "text-gray-500 hover:text-cyan-500"
                       }`}

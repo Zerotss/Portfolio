@@ -16,10 +16,10 @@ export default function ProjectsSection({ id }: ProjectsSectionProps) {
   const { openMenu, closeMenu, isMobile } = useMenuStore();
   return (
     <>
-      <section id={id} className="bg-cyan-700 px-10 sm:px-10 md:px-15 lg:px-20 py-16 flex flex-col items-center rounded-4xl mr-8 ml-8 space-y-6">
+      <section id={id} className="bg-cyan-700 px-10 sm:px-10 md:px-15 lg:px-20 py-16 flex flex-col items-center space-y-6">
 
 
-        <div className=" max-w-5xl z-10">
+        <div className=" z-10">
           <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] font-medieval text-white mb-15  text-center md:text-left">Proyectos</h2>
 
           <div className=" max-w-full flex flex-col gap-10">

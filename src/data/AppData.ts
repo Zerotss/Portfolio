@@ -8,7 +8,7 @@ import { TbBrandCSharp, TbBrandKotlin, TbBrandTypescript } from "react-icons/tb"
 import profilePicture from "../../src/assets/imgs/Perfil_nobg.webp";
 import cvPdf from "../../src/assets/pdfs/personal/CV_Ángel_Paredes_Ballesteros_ES.pdf?url";
 import type { MenuItem } from "../pages/mainPage/components/CelticMenu";
-import type { JourneyItem, Project } from "../types";
+import type { Achievement, JourneyItem, Project } from "../types";
 
 export const personalData = {
     name: "Ángel Paredes Ballesteros",
@@ -88,8 +88,8 @@ export const projectsData: Project[] = [
         github: "https://github.com/",
         demo: "https://demo.com",
     }, {
-        id: "design-it",
-        title: "DesignIt",
+        id: "design-it2",
+        title: "Que mas daaaa",
         introduction: [
             "DesignIt nace como una herramienta para centralizar el proceso de diseño de interfaces antes de la fase de desarrollo. El objetivo principal fue crear una aplicación sencilla pero potente que permitiera estructurar ideas, documentar decisiones de diseño y facilitar la colaboración entre diseño y desarrollo.",
         ],
@@ -108,12 +108,52 @@ export const projectsData: Project[] = [
             "Separación clara de responsabilidades entre capas",
         ],
 
-        images: ["src/assets/imgs/projects/designIt.png", "src/assets/imgs/projects/designIt.png", "src/assets/imgs/projects/designIt.png"],
+        images: ["src/assets/imgs/projects/designIt.png"],
 
         github: "https://github.com/",
         demo: "https://demo.com",
     }
 ]
+export const achievements: Achievement[] = [
+    {
+        title: "AWS Cloud Practitioner",
+        issuer: "Amazon Web Services",
+        year: 2024,
+        description:
+            "Fundamental cloud concepts, AWS core services, security, and pricing models.",
+        link: "https://www.credly.com/",
+        technologies: ["AWS", "Cloud"],
+        type: "certificate",
+    },
+    {
+        title: "Java & Spring Boot Professional",
+        issuer: "Udemy",
+        year: 2023,
+        description:
+            "Backend development with Java and Spring Boot, REST APIs, validation, and testing.",
+        link: personalData.cv,
+        technologies: ["Java", "Spring Boot", "REST"],
+        type: "certificate",
+    },
+    {
+        title: "1st Place – University Hackathon",
+        issuer: "Engineering Faculty · XYZ University",
+        year: 2023,
+        description:
+            "Built a full-stack application in 24 hours using React and Spring Boot, focusing on real-time collaboration.",
+        technologies: ["React", "SpringBoot", "Full Stack"],
+        type: "award",
+    },
+    {
+        title: "Best Academic Project – Software Engineering",
+        issuer: "Computer Science Department",
+        year: 2022,
+        description:
+            "Designed and implemented a modular backend architecture with clean code principles and unit testing.",
+        technologies: ["Java", "Clean Architecture", "Testing"],
+        type: "award",
+    },
+];
 {/*Technologies */ }
 export const socialMap: Record<
     string,

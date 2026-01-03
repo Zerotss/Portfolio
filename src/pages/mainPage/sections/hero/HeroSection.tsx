@@ -40,9 +40,9 @@ export default function HeroSection({ id }: HeroSectionProps) {
           </p>
 
           <div className="flex gap-4">
-            <SocialIcon socialName="github" href={personalData.gitHub} />
-            <SocialIcon socialName="linkedin" href={personalData.linkedIn} />
-            <SocialIcon socialName="gmail" href={`mailto:${personalData.gmail}`} />
+            <SocialIcon socialName="github" theme="dark" href={personalData.gitHub} />
+            <SocialIcon socialName="linkedin" theme="dark" href={personalData.linkedIn} />
+            <SocialIcon socialName="gmail" theme="dark" href={`mailto:${personalData.gmail}`} />
           </div>
 
           <motion.a

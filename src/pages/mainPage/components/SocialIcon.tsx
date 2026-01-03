@@ -3,12 +3,14 @@ import { socialMap } from "../../../data/AppData";
 
 interface SocialIconProps {
     socialName: keyof typeof socialMap;
+    theme: "dark"|"light"; 
     href: string;
 }
 
 
 export default function SocialIcon({
     socialName,
+    theme,
     href,
 }: SocialIconProps) {
     const IconComponent = socialMap[socialName].icon;
@@ -17,14 +19,14 @@ export default function SocialIcon({
         console.warn(`Icon not found`);
         return null;
     }
-
+    const dark= theme==="dark";
     const social = socialMap[socialName];
 
     return (
         <motion.a
             href={href}
             target="_blank"
-            className={` p-3 backdrop-blur-sm   rounded-2xl transition-all group shadow-md ${social.hoverShadow}`}
+            className={` p-3 backdrop-blur-sm ${dark? "text-black" :"text-white"}  rounded-2xl transition-all group shadow-md ${social.hoverShadow}`}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
         >

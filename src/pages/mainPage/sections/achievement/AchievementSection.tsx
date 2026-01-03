@@ -1,72 +1,25 @@
-import { useState } from "react";
-import type { Achievement, Project } from "../../../../types";
+import { achievements } from "../../../../data/AppData";
 import AchievementCard from "./AchievementCard";
-import ContactSection from "../contact/ContactSection";
-
-
 
 interface AchievementSectionProps {
     id: string;
 }
 
 export default function AchievementSection({ id }: AchievementSectionProps) {
-    const [activeProject, setActiveProject] = useState<Project | null>(null);
-    const achievements: Achievement[] = [
-        {
-            title: "AWS Cloud Practitioner",
-            issuer: "Amazon Web Services",
-            year: 2024,
-            description:
-                "Fundamental cloud concepts, AWS core services, security, and pricing models.",
-            link: "https://www.credly.com/",
-            technologies: ["AWS", "Cloud"],
-            type: "certificate",
-        },
-        {
-            title: "Java & Spring Boot Professional",
-            issuer: "Udemy",
-            year: 2023,
-            description:
-                "Backend development with Java and Spring Boot, REST APIs, validation, and testing.",
-            link: "https://www.udemy.com/",
-            technologies: ["Java", "Spring Boot", "REST"],
-            type: "certificate",
-        },
-        {
-            title: "1st Place – University Hackathon",
-            issuer: "Engineering Faculty · XYZ University",
-            year: 2023,
-            description:
-                "Built a full-stack application in 24 hours using React and Spring Boot, focusing on real-time collaboration.",
-            technologies: ["React", "SpringBoot", "Full Stack"],
-            type: "award",
-        },
-        {
-            title: "Best Academic Project – Software Engineering",
-            issuer: "Computer Science Department",
-            year: 2022,
-            description:
-                "Designed and implemented a modular backend architecture with clean code principles and unit testing.",
-            technologies: ["Java", "Clean Architecture", "Testing"],
-            type: "award",
-        },
-    ];
     return (
-        <section 
+        <section
             id={id}
-            className="pt-8 mx-auto  py-20 border-white/20 "
+            className="flex flex-col items-center px-10 sm:px-10 md:px-15 lg:px-20 py-16 space-y-6"
         >
-            <h2 className="text-5xl font-serif mb-20 text-center text-cyan-700 mt-10">
-                Certifications & Awards
-            </h2>
-
-            <div className="w-full max-w-4xl mx-auto">
-                {achievements.map((item) => (
-                    <AchievementCard key={item.title} achievement={item} />
-                ))}
+            <div className="max-w-5xl text-center md:text-left z-10 w-full">
+                <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] font-medieval mb-15 text-cyan-700">Certifications</h2>
+                <div>
+                    {achievements.map((item) => (
+                        <AchievementCard key={item.title} achievement={item} />
+                    ))}
+                </div>
             </div>
-            <ContactSection id="contact"/>
-
         </section>
+
     );
 }

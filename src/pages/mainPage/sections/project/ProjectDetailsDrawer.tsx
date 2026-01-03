@@ -38,68 +38,68 @@ export default function ProjectDetailsDrawer({
                     {/* DRAWER */}
                     <motion.aside
                         className="
-    fixed top-0 right-0 z-160 h-full
-    w-full md:w-[50%] lg:w-[40%]
-   bg-white/75 backdrop-blur-sm
-    border-l border-cyan-200/40
-    shadow-2xl
-    overflow-y-auto
-  "
+                            fixed top-0 right-0 z-160 h-full
+                            w-full md:w-[50%] lg:w-[40%]
+                        bg-white/75 backdrop-blur-sm
+                            border-l border-cyan-200/40
+                            shadow-2xl
+                            overflow-y-auto
+                        "
                         initial={{ x: "100%" }}
                         animate={{ x: 0 }}
                         exit={{ x: "100%" }}
                         transition={{ duration: 0.45, ease: "easeOut" }}
                     >
                         {/* HEADER */}
-                        <div className=" px-5 sm:px-5 md:px-6 lg:px-8 py-10 space-y-5">
-                        <div className="flex items-center justify-between  border-b border-cyan-100/30">
-                            <h3 className="font-medieval text-[clamp(1.5rem,3.5vw,2.5rem)] text-cyan-800 drop-shadow-sm">
-                                {project.title}
-                            </h3>
+                        <div className=" ">
+                            <div className="sticky top-0 z-300 bg-cyan-600/10 backdrop-blur-md border-b border-cyan-100/30 px-5 sm:px-5 md:px-6 lg:px-8 py-5 flex items-center justify-between">
+                                <h3 className="font-medieval text-[clamp(1.5rem,3.5vw,2.5rem)] text-cyan-800 drop-shadow-sm">
+                                    {project.title}
+                                </h3>
 
-                            <button
-                                onClick={onClose}
-                                className="p-2 rounded-xl hover:bg-white/40 transition-colors cursor-pointer"
-                                aria-label="Close project details"
-                            >
-                                <X className="w-8 h-8 text-cyan-800" />
-                            </button>
+                                <button
+                                    onClick={onClose}
+                                    className="p-2 rounded-xl hover:bg-white/40 transition-colors cursor-pointer"
+                                    aria-label="Close project details"
+                                >
+                                    <X className="w-8 h-8 text-cyan-800" />
+                                </button>
+                            </div>
 
+                            <div className="px-5 sm:px-5 md:px-6 lg:px-8 py-5 space-y-5">
+                                {/* CONTENT */}
+                                <h4 className="font-light text-[clamp(1.5rem,2.5vw,1.9rem)] text-cyan-700 drop-shadow-sm">
+                                    Context
+                                </h4>
+                                <p className="text-cyan-900/90 leading-relaxed text-[clamp(0.95rem,1.5vw,1.2rem)]">
+                                    {project.introduction}
+                                </p>
 
+                                {/* TOOLS & TECHNOLOGIES */}
+                                <div className="flex flex-wrap gap-3">
+                                    {project.technologies.map((tech) => (
+                                        <Tag key={tech} icon={tech} size="sm" />
+                                    ))}
+                                </div>
 
-                            
-                        </div>
-                         {/* CONTENT */}
-                         <h4 className="font-light text-[clamp(1.5rem,2.5vw,1.9rem)] text-cyan-700 drop-shadow-sm">
-                                Context
-                            </h4>
-                            <p className="text-cyan-900/90 leading-relaxed text-[clamp(0.95rem,1.5vw,1.2rem)]">
-                                {project.introduction}
-                            </p>
+                                <ImageCarousel images={project.images} />
 
-                        {/* TOOLS & TECHNOLOGIES */}
-                        <div className="flex flex-wrap gap-3">
-                            {project.technologies.map((tech) => (
-                                <Tag key={tech} icon={tech} size="sm" />
-                            ))}
-                        </div>
-
-                        <ImageCarousel images={project.images} />
-
-                        {/* LEARNINGS */}
-                            <h4 className="font-light text-[clamp(1.5rem,2.5vw,1.9rem)] text-cyan-700 drop-shadow-sm">
-                                Key Learning Outcomes
-                            </h4>
-                            <ul className="list-disc list-inside text-cyan-900/80 leading-loose text-[clamp(0.95rem,1.5vw,1.2rem)]">
-                                {project.learnings.map((item, i) => (
-                                    <li key={i}>{item}</li>
-                                ))}
-                            </ul>
-
+                                {/* LEARNINGS */}
+                                <h4 className="font-light text-[clamp(1.5rem,2.5vw,1.9rem)] text-cyan-700 drop-shadow-sm">
+                                    Key Learning Outcomes
+                                </h4>
+                                <ul className="list-disc list-inside text-cyan-900/80 leading-loose text-[clamp(0.95rem,1.5vw,1.2rem)]">
+                                    {project.learnings.map((item, i) => (
+                                        <li key={i}>{item}</li>
+                                    ))}
+                                </ul>
                             </div>
 
 
-                       
+                        </div>
+
+
+
                     </motion.aside>
                 </>
             )}

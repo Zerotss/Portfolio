@@ -22,6 +22,7 @@ export default function ProjectCard({ project, watchMore }: ProjectCardProps) {
         md:backdrop-blur-xl
         shadow-[0_8px_40px_rgba(0,0,0,0.25)]
          border border-white/20   
+         max-w-5xl
          
       "
     >
@@ -40,7 +41,7 @@ export default function ProjectCard({ project, watchMore }: ProjectCardProps) {
             {project.title}
           </h3>
 
-          <p className="text-white/80 leading-relaxed text-[clamp(1rem,1.2vw,1.15rem)]">
+          <p className="text-white/80 leading-relaxed text-[clamp(0.95rem,1.2vw,1.15rem)]">
             {project.introduction[0].substring(0, 200)}...
           </p>
 
