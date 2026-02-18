@@ -1,5 +1,3 @@
-import { motion } from "framer-motion";
-import { User } from "lucide-react";
 import { personalData } from "../../../../data/AppData";
 import SocialIcon from "../../components/SocialIcon";
 
