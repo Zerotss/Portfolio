@@ -47,7 +47,7 @@ export default function AnimatedBackgroundCircles({
     };
   
     run();
-  }, [mid, outer, onExitComplete]);
+  }, []);
   
 
   return (
