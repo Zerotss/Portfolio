@@ -1,3 +1,4 @@
+import { AnimatePresence } from "framer-motion";
 import MainCircle from "./pages/components/MainCircle";
 import WelcomeTitle from "./pages/components/WelcomeTitle";
 import LandingPage from "./pages/landingPage/LandingPage";
@@ -10,10 +11,13 @@ export default function App() {
 
   return (
     <div className="bg-gray-100">
+      <AnimatePresence>
       {(currentState === "Landing" || currentState === "TransitionDOWN") && <LandingPage />}
       {(currentState === "TransitionDOWN") && <WelcomeTitle />}
       {(currentState === "Main" || currentState === "TransitionDOWN") && <MainCircle />}
       {currentState === "Main" && <MainPage />}
+      </AnimatePresence>
+
     </div>
 
   );
