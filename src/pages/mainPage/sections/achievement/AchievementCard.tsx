@@ -27,9 +27,25 @@ export default function AchievementCard({ achievement }: AchievementCardProps) {
         <Icon className="w-4 h-4 text-cyan-600 shrink-0 mt-0.5 sm:mt-0" />
 
         <div className="flex flex-col min-w-0 gap-1 text-left">
-          <span className="text-[clamp(0.95rem,1.5vw,1.2rem)] font-light  break-words">
+          <div className="flex gap-3"><span className="text-[clamp(0.95rem,1.5vw,1.2rem)] font-light  break-words">
             {achievement.title}
           </span>
+            {achievement.link && (
+              <a
+                href={achievement.link}
+                target="_blank"
+                className="
+      
+      self-center
+      text-gray-400 hover:text-cyan-800 transition
+    "
+              >
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            )}
+
+          </div>
+
 
           <div className="flex gap-3 ">
             <span className="text-cyan-800 text-[clamp(0.95rem,1.2vw,1.15rem)] font-medieval">
@@ -72,20 +88,6 @@ export default function AchievementCard({ achievement }: AchievementCardProps) {
       </div>
 
 
-      {achievement.link && (
-        <a
-          href={achievement.link}
-          target="_blank"
-          className="
-      absolute right-0 top-3
-      sm:static
-      self-center
-      text-gray-400 hover:text-cyan-800 transition
-    "
-        >
-          <ExternalLink className="w-4 h-4" />
-        </a>
-      )}
 
 
     </div >

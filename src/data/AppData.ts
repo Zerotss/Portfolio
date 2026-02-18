@@ -87,7 +87,7 @@ export const projectsData: Project[] = [
         title: "Portfolio",
         introduction: [
             "This portfolio was built as a personal frontend challenge after completing my React and Next.js courses. My main goal was to reinforce my frontend fundamentals and gain confidence building a real-world project from scratch.",
-            "Built with React, Vite, TypeScript, and Zustand, this project focuses on clean component structure, reusable UI patterns, and a smooth user experience. It was fully designed and developed independently as a hands-on frontend challenge."],
+            "Built with React, Vite, TypeScript, TailwindCss and Zustand, this project focuses on clean component structure, reusable UI patterns, and a smooth user experience. It was fully designed and developed independently as a hands-on frontend challenge."],
         technologies: [
             "React",
             "Vite",
