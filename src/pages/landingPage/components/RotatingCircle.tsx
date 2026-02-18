@@ -1,4 +1,4 @@
-import { motion, useAnimation } from "framer-motion";
+import { motion, useAnimation, useMotionValue } from "framer-motion";
 import React, { useEffect, useState } from "react";
 
 type RotatingCircleProps = {
@@ -17,29 +17,27 @@ function RotatingCircle({
   tailWindStyles = "",
 }: RotatingCircleProps) {
   const controls = useAnimation();
-  const [currentRotation] = useState(0);
+  const rotate = useMotionValue(0); 
   const rotateDirectionMultiplier = rotationDirection === "clockwise" ? 1 : -1;
   useEffect(() => {
     if (!stopped) {
       controls.start({
-        rotate: [currentRotation, currentRotation + 360 * rotateDirectionMultiplier],
-        transition: {repeat: Infinity,repeatType: "loop",duration: speed,ease: "linear"},
+        rotate: [rotate.get(), rotate.get() + 360 * rotateDirectionMultiplier],
+        transition: { repeat: Infinity, repeatType: "loop", duration: speed, ease: "linear" },
       });
-    }else {
+    } else {
       controls.start({
-        rotate: currentRotation - 20 * rotateDirectionMultiplier, 
-        transition: {
-          duration: 1,  
-          ease: "easeOut",
-        },
-      })
+        rotate: rotate.get() - 20 * rotateDirectionMultiplier, // ✅ desde el ángulo real
+        transition: { duration: 1, ease: "easeOut" },
+      });
     }
-  }, [stopped, rotateDirectionMultiplier, controls]);
+  }, [stopped]);
 
   return (
     <motion.div
       className="absolute inset-0 flex items-center justify-center"
       animate={controls}
+      style={{ willChange: "transform" ,transform: "translateZ(0)"}} 
     >
       <SVG className={tailWindStyles} />
     </motion.div>
