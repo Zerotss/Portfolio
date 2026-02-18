@@ -30,8 +30,8 @@ export default function ContactSection({ id }: ContactSectionProps) {
             <p
               className="text-cyan-100 leading-relaxed text-[clamp(0.95rem,1.5vw,1.2rem)] "
             >
-              I’m open to new opportunities, interesting projects, and
-              collaborations where I can bring value as a full-stack developer.
+                I enjoy building things with a team and tackling challenges together. If there’s an opportunity to contribute and grow, I’d love to be part of it.
+
             </p>
 
             <a
@@ -40,7 +40,7 @@ export default function ContactSection({ id }: ContactSectionProps) {
                 inline-block
                 text-lg sm:text-xl md:text-2xl
                 font-light
-                text-emerald-500
+                text-emerald-200
                 hover:text-cyan-400
                 transition-colors duration-300
               "

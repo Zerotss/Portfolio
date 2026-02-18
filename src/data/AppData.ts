@@ -3,24 +3,24 @@ import type { ComponentType } from "react";
 import { BiLogoSpringBoot } from "react-icons/bi";
 import { FaJava } from "react-icons/fa";
 import { PiAndroidLogoBold, PiAngularLogoBold } from "react-icons/pi";
-import { SiDotnet, SiGithub, SiGmail, SiJenkins, SiLinkedin, SiNextdotjs, SiNextui, SiNodedotjs, SiReact, SiUnity } from "react-icons/si";
+import { SiGithub, SiGmail, SiJenkins, SiLinkedin, SiNextdotjs, SiNodedotjs, SiReact, SiUnity } from "react-icons/si";
 import { TbBrandCSharp, TbBrandKotlin, TbBrandTypescript } from "react-icons/tb";
-import profilePicture from "../../src/assets/imgs/Perfil_nobg.webp";
-import cvPdf from "../../src/assets/pdfs/personal/CV_Ángel_Paredes_Ballesteros_ES.pdf?url";
+import profilePicture from "../../src/assets/imgs/profilePicture.webp";
 import AngularHiberus from "../../src/assets/pdfs/certifications/Angular_Hiberus.pdf?url";
 import HeroesHiberusProgram from "../../src/assets/pdfs/certifications/Heroes_Hiberus_Program.pdf?url";
 import ReactNextUdemy from "../../src/assets/pdfs/certifications/React_Next_Udemy.pdf";
+//import cvPdf from "../../src/assets/pdfs/personal/CV_Ángel_Paredes_Ballesteros_ES.pdf?url";
 import type { MenuItem } from "../pages/mainPage/components/CelticMenu";
 import type { Achievement, JourneyItem, Project } from "../types";
 
 export const personalData = {
     name: "Ángel Paredes Ballesteros",
     title: "Full Stack Developer",
-    cv: cvPdf,
+    cv: null,
     profilePicture: profilePicture,
     gitHub: "https://github.com/Zerotss",
     linkedIn: "https://www.linkedin.com/in/%C3%A1ngel-paredes-ballesteros-120732292/",
-    gmail: "donpuentito@gmail.com",
+    gmail: "donpuen.work@gmail.com",
 }
 
 // Ejemplo de journeyData con dos ítems
@@ -31,82 +31,79 @@ export const journeyData: JourneyItem[] = [
         company: "Hiberus",
         year: "02/2025 – Today",
         description:
-            "Formación en programación, bases de datos y control de versiones con Git. Incluye frameworks como Spring Boot, Java EE, .NET y Android Studio, con proyectos prácticos para crear aplicaciones robustas y escalables.",
+            "I have been involved in the development of enterprise-level applications, mainly focused on Java-based solutions. I contributed to improving team productivity by creating a custom code generator to automate repetitive tasks. I also collaborated directly with clients, understanding their needs and proposing clear and effective technical solutions.",
         tags: ["Angular", "JSF", "SpringBoot", "Java", "Jenkins", "Git"],
     },
     {
         type: "work",
-        title: "Junior Mobile Developer",
+        title: "Mobile Developer Intern",
         company: "Serbatic",
-        year: "02/2025 – Today",
+        year: "05/03/2024 – 24/05/2024",
         description:
-            "Formación en programación, bases de datos y control de versiones con Git. Incluye frameworks como Spring Boot, Java EE, .NET y Android Studio, con proyectos prácticos para crear aplicaciones robustas y escalables.",
+            "I received training through the Android Basics with Jetpack Compose course and later participated in the development of an internal mobile application following Clean Architecture principles.",
         tags: ["Jetpack Compose", "Kotlin", "Git"],
     },
     {
         type: "study",
-        title: "Técnico Superior en Desarrollo de Aplicaciones Multiplataforma",
+        title: "Higher Technician in Multiplatform Application Development",
         company: "Centro Gregorio Fernández",
         year: "09/2022 – 06/2024",
         description:
-            "Formación en programación, bases de datos y control de versiones con Git. Incluye frameworks como Spring Boot, Java EE, .NET y Android Studio, con proyectos prácticos para crear aplicaciones robustas y escalables.",
-        tags: ["JSF", "SpringBoot", "Maui", "C#", "Java", "Git"],
+            "During my studies, I acquired a solid foundation in programming, databases, version control, and software development best practices. This period represents the core of my technical education and the basis of my professional growth as a developer.",
+        tags: ["JSF", "SpringBoot", "C#", "Java", "Git"],
     },
 ];
+
 
 export const projectsData: Project[] = [
 
     {
         id: "design-it",
-        title: "DesignIt",
+        title: "Design It",
         introduction: [
-            "DesignIt nace como una herramienta para centralizar el proceso de diseño de interfaces antes de la fase de desarrollo. El objetivo principal fue crear una aplicación sencilla pero potente que permitiera estructurar ideas, documentar decisiones de diseño y facilitar la colaboración entre diseño y desarrollo.",
+            "Design It is an interior room design application created as my final project for the Cross-Platform Application Development program. It allows users to quickly create, visualize, and customize room layouts."
+            , "Users can define room dimensions with automatic wall generation, place furniture from a categorized catalog, and freely manipulate objects by moving, rotating, scaling, and customizing their colors. The application includes real-time collision detection, multiple viewing perspectives, dynamic camera adjustment, 3D object previews, cloud-based saving, and immersive sound effects to enhance the overall design experience."
+
         ],
         technologies: [
-            "React",
-            "TypeScript",
-            "SpringBoot",
-            "Git",
+            "Unity",
+            "C#"
         ],
-
         learnings: [
-            "Diseño de una arquitectura frontend escalable con React y TypeScript",
-            "Comunicación eficiente entre frontend y backend mediante APIs REST",
-            "Gestión de estado y reutilización de componentes",
-            "Buenas prácticas de versionado y trabajo con Git",
-            "Separación clara de responsabilidades entre capas",
+            "Hands-on experience with Unity's core mechanics and features",
+            "Mastered Firebase integration for real-time data storage and management",
+            "Developed and tested a complete application, receiving user feedback to enhance usability."
         ],
-
-        images: ["src/assets/imgs/projects/designIt.png", "src/assets/imgs/projects/designIt.png", "src/assets/imgs/projects/designIt.png"],
-
-        github: "https://github.com/",
-        demo: "https://demo.com",
-    }, {
-        id: "design-it2",
-        title: "Que mas daaaa",
-        introduction: [
-            "DesignIt nace como una herramienta para centralizar el proceso de diseño de interfaces antes de la fase de desarrollo. El objetivo principal fue crear una aplicación sencilla pero potente que permitiera estructurar ideas, documentar decisiones de diseño y facilitar la colaboración entre diseño y desarrollo.",
+        images: [
+            "src/assets/imgs/projects/designIt/designIt.png"
         ],
-        technologies: [
-            "React",
-            "TypeScript",
-            "SpringBoot",
-            "Git",
-        ],
-
-        learnings: [
-            "Diseño de una arquitectura frontend escalable con React y TypeScript",
-            "Comunicación eficiente entre frontend y backend mediante APIs REST",
-            "Gestión de estado y reutilización de componentes",
-            "Buenas prácticas de versionado y trabajo con Git",
-            "Separación clara de responsabilidades entre capas",
-        ],
-
-        images: ["src/assets/imgs/projects/designIt.png"],
-
-        github: "https://github.com/",
-        demo: "https://demo.com",
+        github: "https://github.com/Zerotss/DesignIt",
+        demo: "https://www.youtube.com/watch?v=G3dilCsIkr0"
     }
+    , {
+        id: "portfolio",
+        title: "Portfolio",
+        introduction: [
+            "This portfolio was built as a personal frontend challenge after completing my React and Next.js courses. My main goal was to reinforce my frontend fundamentals and gain confidence building a real-world project from scratch.",
+            "Built with React, Vite, TypeScript, and Zustand, this project focuses on clean component structure, reusable UI patterns, and a smooth user experience. It was fully designed and developed independently as a hands-on frontend challenge."],
+        technologies: [
+            "React",
+            "Vite",
+            "TypeScript",
+            "Zustand"
+        ],
+        learnings: [
+            "Strengthened my understanding of core React concepts and component architecture",
+            "Applied global state management using Zustand in a real project",
+            "Improved frontend decision-making, UI structuring, and project planning from scratch"
+        ],
+        images: [
+            "src/assets/imgs/projects/portfolio/portfolio.webp"
+        ],
+        github: "https://github.com/Zerotss/portfolio"
+    }
+
+
 ]
 export const achievements: Achievement[] = [
     {
@@ -115,7 +112,7 @@ export const achievements: Achievement[] = [
         year: 2026,
         gitHub: "https://github.com/Zerotss/ReactCourse",
         link: ReactNextUdemy,
-        technologies: ["React", "Next", "TypeScript"],
+        technologies: ["React", "Next", "Node","TypeScript"],
         type: "certificate",
     },
 
@@ -132,7 +129,7 @@ export const achievements: Achievement[] = [
         issuer: "Hiberus",
         year: 2024,
         link: HeroesHiberusProgram,
-        technologies: ["SpringBoot","Java", "TypeScript"],
+        technologies: ["SpringBoot", "Java", "TypeScript"],
         type: "certificate",
     },
 ];
@@ -191,18 +188,6 @@ export const techMap: Record<
             shadow: "0 4px 20px rgba(6,182,212,0.2)",
         },
     },
-
-    JSF: {
-        icon: FaJava,
-        colors: {
-            from: "from-green-50",
-            to: "to-green-100",
-            border: "border-green-200/50",
-            icon: "text-green-600",
-            shadow: "0 4px 20px rgba(34,197,94,0.2)",
-        },
-    },
-
     Next: {
         icon: SiNextdotjs,
         colors: {
@@ -213,8 +198,16 @@ export const techMap: Record<
             shadow: "0 4px 20px rgba(15,23,42,0.2)",
         },
     },
-
-
+    JSF: {
+        icon: FaJava,
+        colors: {
+            from: "from-green-50",
+            to: "to-green-100",
+            border: "border-green-200/50",
+            icon: "text-green-600",
+            shadow: "0 4px 20px rgba(34,197,94,0.2)",
+        },
+    },
     "Jetpack Compose": {
         icon: PiAndroidLogoBold,
         colors: {
@@ -327,8 +320,8 @@ export const techMap: Record<
 };
 {/*App specific variables */ }
 export const menuItems: MenuItem[] = [
-    { id: 'intro', name: 'Inicio' },
-    { id: 'background', name: 'Trayectoria' },
-    { id: 'projects', name: 'Proyectos' },
-    { id: 'contact', name: 'Contacto' }
+    { id: 'intro', name: 'Home' },
+    { id: 'background', name: 'Background' },
+    { id: 'projects', name: 'Projects' },
+    { id: 'contact', name: 'Contact' }
 ];

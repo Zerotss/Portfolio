@@ -20,7 +20,7 @@ export default function ProjectsSection({ id }: ProjectsSectionProps) {
 
 
         <div className=" z-10">
-          <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] font-medieval text-white mb-15  text-center md:text-left">Proyectos</h2>
+          <h2 className="text-[clamp(1.8rem,3.5vw,3rem)] font-medieval text-white mb-15  text-center md:text-left">Projects</h2>
 
           <div className=" max-w-full flex flex-col gap-10">
 

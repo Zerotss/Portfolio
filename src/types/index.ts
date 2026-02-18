@@ -16,7 +16,7 @@ export interface Project {
     learnings: string[];
     images: string[];
     github: string;
-    demo: string;
+    demo?: string;
   }
   export interface Achievement {
     title: string;

@@ -74,7 +74,7 @@ export default function HeroSection({ id }: HeroSectionProps) {
             src={personalData.profilePicture}
             alt="Profile Picture"
             className="
-      w-[20rem] md:w-[25rem]  lg:w-[30rem]
+      w-[20rem] md:w-[25rem]  lg:w-[33rem]
       max-w-full
       drop-shadow-[50px_0_0_#0092b8]
       select-none

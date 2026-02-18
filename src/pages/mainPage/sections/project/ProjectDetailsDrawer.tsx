@@ -66,19 +66,18 @@ export default function ProjectDetailsDrawer({
                                 </button>
                             </div>
 
-                            <div className="px-5 sm:px-5 md:px-6 lg:px-8 py-5 space-y-5">
+                            <div className="px-5 sm:px-5 md:px-6 lg:px-8 py-5 space-y-8">
+
                                 {/* CONTENT */}
                                 <h4 className="font-light text-[clamp(1.5rem,2.5vw,1.9rem)] text-cyan-700 drop-shadow-sm">
                                     Context
                                 </h4>
-                                <p className="text-cyan-900/90 leading-relaxed text-[clamp(0.95rem,1.5vw,1.2rem)]">
-                                    {project.introduction}
-                                </p>
 
-                                {/* TOOLS & TECHNOLOGIES */}
-                                <div className="flex flex-wrap gap-3">
-                                    {project.technologies.map((tech) => (
-                                        <Tag key={tech} icon={tech} size="sm" />
+                                <div className="space-y-4 text-cyan-900/90 leading-relaxed text-[clamp(0.95rem,1.5vw,1.2rem)]">
+                                    {project.introduction.map((paragraph, i) => (
+                                        <p key={i}>
+                                            {paragraph}
+                                        </p>
                                     ))}
                                 </div>
 
@@ -88,11 +87,23 @@ export default function ProjectDetailsDrawer({
                                 <h4 className="font-light text-[clamp(1.5rem,2.5vw,1.9rem)] text-cyan-700 drop-shadow-sm">
                                     Key Learning Outcomes
                                 </h4>
-                                <ul className="list-disc list-inside text-cyan-900/80 leading-loose text-[clamp(0.95rem,1.5vw,1.2rem)]">
+
+                                <ul className="list-disc list-inside text-cyan-900/80 text-[clamp(0.95rem,1.5vw,1.2rem)] space-y-2">
                                     {project.learnings.map((item, i) => (
-                                        <li key={i}>{item}</li>
+                                        <li key={i} className="leading-snug">
+                                            {item}
+                                        </li>
                                     ))}
                                 </ul>
+
+
+                                {/* TOOLS & TECHNOLOGIES */}
+                                <div className="flex flex-wrap gap-3">
+                                    {project.technologies.map((tech) => (
+                                        <Tag key={tech} icon={tech} size="sm" />
+                                    ))}
+                                </div>
+
                             </div>
 
 

@@ -37,10 +37,12 @@ export default function ProjectButtons({
         <span className={labelClass}>GitHub</span>
       </a>
 
-      <a href={project.demo} target="_blank" className={base}>
+      {project.demo &&(
+        <a href={project.demo} target="_blank" className={base}>
         <ExternalLink className={iconClass} />
         <span className={labelClass}>Demo</span>
       </a>
+      )}
     </div>
   );
 }
