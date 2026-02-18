@@ -1,5 +1,5 @@
 import { motion, useAnimation, useMotionValue } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
 type RotatingCircleProps = {
   SVG: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
@@ -17,7 +17,7 @@ function RotatingCircle({
   tailWindStyles = "",
 }: RotatingCircleProps) {
   const controls = useAnimation();
-  const rotate = useMotionValue(0); 
+  const rotate = useMotionValue(0);
   const rotateDirectionMultiplier = rotationDirection === "clockwise" ? 1 : -1;
   useEffect(() => {
     if (!stopped) {
@@ -37,7 +37,7 @@ function RotatingCircle({
     <motion.div
       className="absolute inset-0 flex items-center justify-center"
       animate={controls}
-      style={{ willChange: "transform" ,transform: "translateZ(0)"}} 
+      style={{ willChange: "transform", transform: "translateZ(0)" }}
     >
       <SVG className={tailWindStyles} />
     </motion.div>
