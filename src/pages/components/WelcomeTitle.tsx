@@ -4,7 +4,7 @@ export default function WelcomeTitle() {
   return (
     <div className="absolute inset-0 flex flex-col items-center justify-center bg-gray-100 ">
       <motion.h2
-        className="font-medieval text-cyan-800 lg:text-8xl md:text-7xl text-5xl text-center leading-none"
+        className="font-medieval text-cyan-800 2xl:text-8xl lg:text-8xl md:text-7xl sm:text-5xl text-center leading-none"
         style={{ willChange: "opacity" }}
         initial={{ opacity: 0 }}
         animate={{ opacity: [0, 1, 1, 0] }}

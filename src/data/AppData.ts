@@ -100,7 +100,7 @@ export const projectsData: Project[] = [
         images: [
             "src/assets/imgs/projects/portfolio/portfolio.webp"
         ],
-        github: "https://github.com/Zerotss/portfolio"
+        github: "https://github.com/Zerotss/Portfolio"
     }
 
 
