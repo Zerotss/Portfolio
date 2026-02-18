@@ -1,4 +1,4 @@
-import InnerCircle from "../../assets/circles/innerCircle.svg?react";
+import InnerCircle from "../../circles/innerCircle.svg?react";
 import { motion } from "framer-motion";
 import { useAppStore } from "../../stores/AppStore";
 

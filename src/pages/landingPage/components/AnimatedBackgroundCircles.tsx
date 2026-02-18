@@ -1,7 +1,7 @@
 import { motion, useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
-import MidCircle from "../../../assets/circles/midCircle.svg?react";
-import OuterCircle from "../../../assets/circles/outerCircle.svg?react";
+import MidCircle from "../../../circles/midCircle.svg?react";
+import OuterCircle from "../../../circles/outerCircle.svg?react";
 import RotatingCircle from "./RotatingCircle";
 
 type AnimatedBackgroundCirclesProps = {
