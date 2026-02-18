@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useAppStore } from "../../stores/AppStore";
 
 export default function MainCircle() {
-  const { setState } = useAppStore();
+  const { setState, isStarted, setStarted } = useAppStore();
 
   return (
     <div className="fixed inset-0 flex items-center justify-center opacity-10">
@@ -16,7 +16,10 @@ export default function MainCircle() {
           opacity: { repeat: 0, duration: 0.7, ease: "anticipate" },
         }}
         onAnimationComplete={() => {
-          setState("Main");
+          if(!isStarted){
+            setStarted(true)
+            setState("Main");
+          }
         }}
       >
         <motion.div
