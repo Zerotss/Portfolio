@@ -1,9 +1,9 @@
-import InnerCircle from "../../circles/innerCircle.svg?react";
 import { motion } from "framer-motion";
+import InnerCircle from "../../circles/innerCircle.svg?react";
 import { useAppStore } from "../../stores/AppStore";
 
 export default function MainCircle() {
-  const { setState, isStarted, setStarted } = useAppStore();
+  const { setState } = useAppStore();
 
   return (
     <div className="fixed inset-0 flex items-center justify-center opacity-10">
@@ -16,10 +16,7 @@ export default function MainCircle() {
           opacity: { repeat: 0, duration: 0.7, ease: "anticipate" },
         }}
         onAnimationComplete={() => {
-          if(!isStarted){
-            setStarted(true)
-            setState("Main");
-          }
+          setState("Main");
         }}
       >
         <motion.div
