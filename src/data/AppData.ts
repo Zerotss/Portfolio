@@ -9,6 +9,8 @@ import profilePicture from "../../src/assets/imgs/profilePicture.webp";
 import AngularHiberus from "../../src/assets/pdfs/certifications/Angular_Hiberus.pdf?url";
 import HeroesHiberusProgram from "../../src/assets/pdfs/certifications/Heroes_Hiberus_Program.pdf?url";
 import ReactNextUdemy from "../../src/assets/pdfs/certifications/React_Next_Udemy.pdf";
+import designItImg from "../assets/imgs/projects/designIt/designIt.png";
+import portfolioImg from "../assets/imgs/projects/designIt/designIt.png";
 //import cvPdf from "../../src/assets/pdfs/personal/CV_Ángel_Paredes_Ballesteros_ES.pdf?url";
 import type { MenuItem } from "../pages/mainPage/components/CelticMenu";
 import type { Achievement, JourneyItem, Project } from "../types";
@@ -75,7 +77,7 @@ export const projectsData: Project[] = [
             "Developed and tested a complete application, receiving user feedback to enhance usability."
         ],
         images: [
-            "src/assets/imgs/projects/designIt/designIt.png"
+           designItImg
         ],
         github: "https://github.com/Zerotss/DesignIt",
         demo: "https://www.youtube.com/watch?v=G3dilCsIkr0"
@@ -98,7 +100,7 @@ export const projectsData: Project[] = [
             "Improved frontend decision-making, UI structuring, and project planning from scratch"
         ],
         images: [
-            "src/assets/imgs/projects/portfolio/portfolio.webp"
+            portfolioImg
         ],
         github: "https://github.com/Zerotss/Portfolio"
     }
