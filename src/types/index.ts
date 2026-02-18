@@ -22,8 +22,8 @@ export interface Project {
     title: string;
     issuer: string;
     year: number;
-    description: string;
     link?: string;
+    gitHub?: string;
     technologies: TechMapKey[];
     type: "certificate" | "award";
 }

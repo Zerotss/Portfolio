@@ -3,16 +3,19 @@ import type { ComponentType } from "react";
 import { BiLogoSpringBoot } from "react-icons/bi";
 import { FaJava } from "react-icons/fa";
 import { PiAndroidLogoBold, PiAngularLogoBold } from "react-icons/pi";
-import { SiDotnet, SiGithub, SiGmail, SiJenkins, SiLinkedin, SiNodedotjs, SiReact, SiUnity } from "react-icons/si";
+import { SiDotnet, SiGithub, SiGmail, SiJenkins, SiLinkedin, SiNextdotjs, SiNextui, SiNodedotjs, SiReact, SiUnity } from "react-icons/si";
 import { TbBrandCSharp, TbBrandKotlin, TbBrandTypescript } from "react-icons/tb";
 import profilePicture from "../../src/assets/imgs/Perfil_nobg.webp";
 import cvPdf from "../../src/assets/pdfs/personal/CV_Ángel_Paredes_Ballesteros_ES.pdf?url";
+import AngularHiberus from "../../src/assets/pdfs/certifications/Angular_Hiberus.pdf?url";
+import HeroesHiberusProgram from "../../src/assets/pdfs/certifications/Heroes_Hiberus_Program.pdf?url";
+import ReactNextUdemy from "../../src/assets/pdfs/certifications/React_Next_Udemy.pdf";
 import type { MenuItem } from "../pages/mainPage/components/CelticMenu";
 import type { Achievement, JourneyItem, Project } from "../types";
 
 export const personalData = {
     name: "Ángel Paredes Ballesteros",
-    title: "Full Stack developer",
+    title: "Full Stack Developer",
     cv: cvPdf,
     profilePicture: profilePicture,
     gitHub: "https://github.com/Zerotss",
@@ -30,15 +33,6 @@ export const journeyData: JourneyItem[] = [
         description:
             "Formación en programación, bases de datos y control de versiones con Git. Incluye frameworks como Spring Boot, Java EE, .NET y Android Studio, con proyectos prácticos para crear aplicaciones robustas y escalables.",
         tags: ["Angular", "JSF", "SpringBoot", "Java", "Jenkins", "Git"],
-    },
-    {
-        type: "work",
-        title: "Industrial Cleaner",
-        company: "Senior",
-        year: "02/2025 – Today",
-        description:
-            "Formación en programación, bases de datos y control de versiones con Git. Incluye frameworks como Spring Boot, Java EE, .NET y Android Studio, con proyectos prácticos para crear aplicaciones robustas y escalables.",
-        tags: [],
     },
     {
         type: "work",
@@ -116,42 +110,30 @@ export const projectsData: Project[] = [
 ]
 export const achievements: Achievement[] = [
     {
-        title: "AWS Cloud Practitioner",
-        issuer: "Amazon Web Services",
-        year: 2024,
-        description:
-            "Fundamental cloud concepts, AWS core services, security, and pricing models.",
-        link: "https://www.credly.com/",
-        technologies: ["AWS", "Cloud"],
-        type: "certificate",
-    },
-    {
-        title: "Java & Spring Boot Professional",
+        title: "React & TypeScript: Complete Guide (10+ Projects)",
         issuer: "Udemy",
-        year: 2023,
-        description:
-            "Backend development with Java and Spring Boot, REST APIs, validation, and testing.",
-        link: personalData.cv,
-        technologies: ["Java", "Spring Boot", "REST"],
+        year: 2026,
+        gitHub: "https://github.com/Zerotss/ReactCourse",
+        link: ReactNextUdemy,
+        technologies: ["React", "Next", "TypeScript"],
+        type: "certificate",
+    },
+
+    {
+        title: "Heroes and Heroines Program (Angular)",
+        issuer: "Hiberus",
+        year: 2024,
+        link: AngularHiberus,
+        technologies: ["Angular", "TypeScript"],
         type: "certificate",
     },
     {
-        title: "1st Place – University Hackathon",
-        issuer: "Engineering Faculty · XYZ University",
-        year: 2023,
-        description:
-            "Built a full-stack application in 24 hours using React and Spring Boot, focusing on real-time collaboration.",
-        technologies: ["React", "SpringBoot", "Full Stack"],
-        type: "award",
-    },
-    {
-        title: "Best Academic Project – Software Engineering",
-        issuer: "Computer Science Department",
-        year: 2022,
-        description:
-            "Designed and implemented a modular backend architecture with clean code principles and unit testing.",
-        technologies: ["Java", "Clean Architecture", "Testing"],
-        type: "award",
+        title: "Heroes and Heroines Program (SpringBoot & TypeScript)",
+        issuer: "Hiberus",
+        year: 2024,
+        link: HeroesHiberusProgram,
+        technologies: ["SpringBoot","Java", "TypeScript"],
+        type: "certificate",
     },
 ];
 {/*Technologies */ }
@@ -221,16 +203,17 @@ export const techMap: Record<
         },
     },
 
-    Maui: {
-        icon: SiDotnet,
+    Next: {
+        icon: SiNextdotjs,
         colors: {
-            from: "from-indigo-50",
-            to: "to-indigo-100",
-            border: "border-indigo-200/50",
-            icon: "text-indigo-600",
-            shadow: "0 4px 20px rgba(79,70,229,0.2)",
+            from: "from-slate-50",
+            to: "to-slate-100",
+            border: "border-slate-200/50",
+            icon: "text-slate-800",
+            shadow: "0 4px 20px rgba(15,23,42,0.2)",
         },
     },
+
 
     "Jetpack Compose": {
         icon: PiAndroidLogoBold,

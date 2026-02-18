@@ -1,6 +1,7 @@
 import { Award, ExternalLink, GraduationCap } from "lucide-react";
 import type { Achievement } from "../../../../types";
 import Tag from "../../components/Tag";
+import { BsGithub } from "react-icons/bs";
 
 interface AchievementCardProps {
   achievement: Achievement;
@@ -30,9 +31,23 @@ export default function AchievementCard({ achievement }: AchievementCardProps) {
             {achievement.title}
           </span>
 
-          <span className="text-cyan-800 text-[clamp(0.95rem,1.2vw,1.15rem)] font-medieval">
-            {achievement.issuer} · {achievement.year}
-          </span>
+          <div className="flex gap-3">
+            <span className="text-cyan-800 text-[clamp(0.95rem,1.2vw,1.15rem)] font-medieval">
+              {achievement.issuer} · {achievement.year}
+            </span>
+            {achievement.gitHub && (
+              <a
+                href={achievement.gitHub}
+                target="_blank"
+                className="
+                self-center
+                text-gray-500 hover:text-cyan-800 transition
+                "
+              >
+                <BsGithub className="w-5 h-5" />
+              </a>
+            )}</div>
+
 
           {/* TECHNOLOGIES — MOBILE */}
           {achievement.technologies && (
@@ -56,7 +71,7 @@ export default function AchievementCard({ achievement }: AchievementCardProps) {
         )}
       </div>
 
-      {/* LINK — ALWAYS VISIBLE */}
+
       {achievement.link && (
         <a
           href={achievement.link}

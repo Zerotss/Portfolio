@@ -31,7 +31,7 @@ export default function HeroSection({ id }: HeroSectionProps) {
       mt-10 
     "
         >
-          <h1 className="text-[clamp(2.53rem,5vw,3.8rem)] leading-tight tracking-tight font-medieval text-cyan-600">
+          <h1 className="text-[clamp(2.3rem,4.5vw,3.8rem)] leading-tight tracking-tight font-medieval text-cyan-600">
             {personalData.name}
           </h1>
 
