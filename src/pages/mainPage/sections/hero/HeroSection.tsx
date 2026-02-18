@@ -44,7 +44,7 @@ export default function HeroSection({ id }: HeroSectionProps) {
             <SocialIcon socialName="linkedin" theme="dark" href={personalData.linkedIn} />
             <SocialIcon socialName="gmail" theme="dark" href={`mailto:${personalData.gmail}`} />
           </div>
-
+{/*
           <motion.a
             href={personalData.cv}
             target="_blank"
@@ -67,7 +67,7 @@ export default function HeroSection({ id }: HeroSectionProps) {
             Download CV
           </motion.a>
         </div>
-
+*/}
         {/* Imagen */}
         <div className="flex justify-center mt-10 ">
           <img
