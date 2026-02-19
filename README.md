@@ -1,54 +1,54 @@
-# React + TypeScript + Vite
+# Portfolio&nbsp; <img src="public/assets/imgs/webIcon.ico" alt="Logo" width="30" />
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Index
 
-Currently, two official plugins are available:
+1. [Introduction](#introduction)
+2. [Features](#features)
+3. [Tools & Technologies](#tools--technologies)
+4. [Key Learning Outcomes](#key-learning-outcomes)
+5. [Screenshots](#screenshots)
+6. [Demo](#demo)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+## Introduction 
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+This portfolio was built as a personal frontend challenge after completing my React and Next.js courses. My main goal was to reinforce my frontend fundamentals and gain confidence building a real-world project from scratch.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+The project emphasizes clean component architecture, reusable UI patterns, smooth animations, and an overall polished user experience. It was fully designed and developed independently as a hands-on frontend challenge using React, Vite, TypeScript, Tailwind CSS, Framer Motion, and Zustand.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Features
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Clean Component Architecture**: All UI components are modular and reusable, making the codebase easy to maintain.
+- **Smooth Animations**: Transitions and animations are implemented using Framer Motion for a polished experience.
+- **Global State Management**: Zustand is used for efficient state handling across the application.
+- **Responsive Design**: Fully responsive layout to ensure the portfolio looks great on any device.
+- **Project Showcase**: Displays my projects with descriptions, technologies used, and links to live demos or repositories.
+- **Interactive UI**: Components respond to user interactions for an engaging experience.
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## Tools & Technologies
+
+- **React**: Frontend framework for building user interfaces.
+- **TypeScript**: Strongly typed language for safer and more maintainable code.
+- **Vite**: Fast development build tool.
+- **Tailwind CSS**: Utility-first CSS framework for rapid styling.
+- **Framer Motion**: Library for smooth animations.
+- **Zustand**: Lightweight state management solution.
+
+## Key Learning Outcomes
+
+- Strengthened my understanding of core React concepts and component architecture.
+- Applied global state management using Zustand in a real project.
+- Improved frontend decision-making, UI structuring, and project planning from scratch.
+
+## Screenshots
+
+![PortfolioShot](public/assets/imgs/projects/portfolio/portfolio.webp)
+
+## Demo
+<p align="center">
+  <a href="https://zerotss.github.io/Portfolio/">
+      <img src="public/assets/imgs/webIcon.ico" alt="Design It Demo" width="300" >
+  </a>
+</p>
+
+</div>
