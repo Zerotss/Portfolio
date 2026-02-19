@@ -33,7 +33,7 @@ export const journeyData: JourneyItem[] = [
         company: "Hiberus",
         year: "02/2025 – Today",
         description:
-            "I have been involved in the development of enterprise-level applications, mainly focused on Java-based solutions. I took the initiative to develop a custom code generator, reducing manual work and increase productivity. I also collaborated directly with clients, understanding their needs and proposing clear and effective technical solutions.",
+            "Involved in the development of enterprise-level applications, mainly focused on Java-based solutions. Took the initiative to develop a custom code generator, which reduced manual work and increased productivity. Collaborated directly with clients to understand their needs and propose clear, effective technical solutions.",
         tags: ["Angular", "JSF", "SpringBoot", "Java", "Jenkins", "Git"],
     },
     {
