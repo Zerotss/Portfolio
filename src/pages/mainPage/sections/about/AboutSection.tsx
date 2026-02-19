@@ -1,7 +1,7 @@
+import { useMediaQuery } from "react-responsive";
 import { techMap } from "../../../../data/AppData";
 import type { TechMapKey } from "../../../../types";
 import Tag from "../../components/Tag";
-import { useMediaQuery } from "react-responsive";
 
 
 interface AboutSectionProps {
@@ -26,15 +26,23 @@ export default function AboutSection({ id }: AboutSectionProps) {
         </p>
 
         <p className="leading-relaxed text-[clamp(0.95rem,1.5vw,1.2rem)] py-2">
-          Beyond my main responsibilities, I developed a <span className="font-semibold">custom code generator</span> to automate repetitive tasks, boosting team productivity and reducing manual errors. This reflects my proactive approach to taking ownership and improving systems wherever possible.
+          A proactive mindset has led me to develop a
+          <span className="font-semibold"> custom code generator</span> to automate repetitive tasks,
+          increasing team productivity and reducing manual errors. This reflects my tendency to take
+          ownership and look for opportunities to improve existing systems.
         </p>
 
         <p className="leading-relaxed text-[clamp(0.95rem,1.5vw,1.2rem)] py-2">
-          I also have a solid foundation in frontend development with <span className="font-semibold">React and TypeScript</span>, enabling me to understand the full application architecture and collaborate effectively across the stack.
+          Alongside backend work, I have built a solid foundation in frontend development using
+          <span className="font-semibold"> React and TypeScript</span>, allowing me to understand complete
+          application architectures and collaborate effectively across the stack.
         </p>
 
         <p className="leading-relaxed text-[clamp(0.95rem,1.5vw,1.2rem)] py-2">
-          I am a <span className="font-semibold">native Spanish and Norwegian speaker</span> and possess a <span className="font-semibold">high level of English</span>, allowing me to work seamlessly in international and multidisciplinary teams.
+          In addition to technical skills, I am a
+          <span className="font-semibold"> native Spanish and Norwegian speaker</span> with a
+          <span className="font-semibold"> high level of English</span>, enabling smooth communication in
+          international and multidisciplinary teams.
         </p>
 
 
