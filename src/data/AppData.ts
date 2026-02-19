@@ -8,17 +8,17 @@ import { TbBrandCSharp, TbBrandKotlin, TbBrandTypescript } from "react-icons/tb"
 import profilePicture from "/assets/imgs/profilePicture.webp";
 import AngularHiberus from "/assets/pdfs/certifications/Angular_Hiberus.pdf?url";
 import HeroesHiberusProgram from "/assets/pdfs/certifications/Heroes_Hiberus_Program.pdf?url";
-import ReactNextUdemy from "/assets/pdfs/certifications/React_Next_Udemy.pdf";
+import ReactNextUdemy from "/assets/pdfs/certifications/React_Next_Udemy.pdf?url";
 import designItImg from "/assets/imgs/projects/designIt/designIt.webp";
 import portfolioImg from "/assets/imgs/projects/portfolio/portfolio.webp";
-//import cvPdf from "../../src/assets/pdfs/personal/CV_Ángel_Paredes_Ballesteros_ES.pdf?url";
+import cvPdf from "/assets/pdfs/personal/Angel_Paredes_Ballesteros_CV.pdf?url";
 import type { MenuItem } from "../pages/mainPage/components/CelticMenu";
 import type { Achievement, JourneyItem, Project } from "../types";
 
 export const personalData = {
     name: "Ángel Paredes Ballesteros",
     title: "Full Stack Developer",
-    cv: null,
+    cv: cvPdf,
     profilePicture: profilePicture,
     gitHub: "https://github.com/Zerotss",
     linkedIn: "https://www.linkedin.com/in/%C3%A1ngel-paredes-ballesteros-120732292/",
@@ -33,7 +33,7 @@ export const journeyData: JourneyItem[] = [
         company: "Hiberus",
         year: "02/2025 – Today",
         description:
-            "I have been involved in the development of enterprise-level applications, mainly focused on Java-based solutions. I contributed to improving team productivity by creating a custom code generator to automate repetitive tasks. I also collaborated directly with clients, understanding their needs and proposing clear and effective technical solutions.",
+            "I have been involved in the development of enterprise-level applications, mainly focused on Java-based solutions. I took the initiative to develop a custom code generator, reducing manual work and increase productivity. I also collaborated directly with clients, understanding their needs and proposing clear and effective technical solutions.",
         tags: ["Angular", "JSF", "SpringBoot", "Java", "Jenkins", "Git"],
     },
     {
@@ -63,7 +63,7 @@ export const projectsData: Project[] = [
         id: "design-it",
         title: "Design It",
         introduction: [
-            "Design It is an interior room design application created as my final project for the Cross-Platform Application Development program. It allows users to quickly create, visualize, and customize room layouts."
+            "Design It is an interior room design application created as my graduation project. It allows users to quickly create, visualize, and customize room layouts."
             , "Users can define room dimensions with automatic wall generation, place furniture from a categorized catalog, and freely manipulate objects by moving, rotating, scaling, and customizing their colors. The application includes real-time collision detection, multiple viewing perspectives, dynamic camera adjustment, 3D object previews, cloud-based saving, and immersive sound effects to enhance the overall design experience."
 
         ],
@@ -90,9 +90,7 @@ export const projectsData: Project[] = [
             "The project emphasizes clean component architecture, reusable UI patterns, smooth animations, and an overall polished user experience. It was fully designed and developed independently as a hands-on frontend challenge using React, Vite, TypeScript, Tailwind CSS, Framer Motion and Zustand."
         ], technologies: [
             "React",
-            "Vite",
             "TypeScript",
-            "Zustand"
         ],
         learnings: [
             "Strengthened my understanding of core React concepts and component architecture",

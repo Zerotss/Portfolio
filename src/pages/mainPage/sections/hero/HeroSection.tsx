@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+import { User } from "lucide-react";
 import { personalData } from "../../../../data/AppData";
 import SocialIcon from "../../components/SocialIcon";
 
@@ -42,7 +44,7 @@ export default function HeroSection({ id }: HeroSectionProps) {
             <SocialIcon socialName="linkedin" theme="dark" href={personalData.linkedIn} />
             <SocialIcon socialName="gmail" theme="dark" href={`mailto:${personalData.gmail}`} />
           </div>
-          {/*
+
           <motion.a
             href={personalData.cv}
             target="_blank"
@@ -64,7 +66,7 @@ export default function HeroSection({ id }: HeroSectionProps) {
             <User className="w-4 h-4" />
             Download CV
           </motion.a>
-          */}
+
         </div>
 
         {/* Imagen */}
