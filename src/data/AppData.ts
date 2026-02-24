@@ -40,7 +40,7 @@ export const journeyData: JourneyItem[] = [
         type: "work",
         title: "Mobile Developer Intern",
         company: "Serbatic",
-        year: "05/03/2024 – 24/05/2024",
+        year: "03/2024 – 05/2024",
         description:
             "I received training through the Android Basics with Jetpack Compose course and later participated in the development of an internal mobile application following Clean Architecture principles.",
         tags: ["Jetpack Compose", "Kotlin", "Git"],
