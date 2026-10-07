@@ -15,7 +15,7 @@ export interface Project {
     technologies: TechMapKey[];
     learnings: string[];
     images: string[];
-    github: string;
+    github?: string;
     demo?: string;
   }
   export interface Achievement {

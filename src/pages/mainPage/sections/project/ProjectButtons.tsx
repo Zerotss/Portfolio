@@ -31,17 +31,20 @@ export default function ProjectButtons({
         <Eye className={iconClass} />
         <span className={`${labelClass} cursor-pointer`}>Details</span>
       </button>
+      {
+        project.github && (
+          <a href={project.github} target="_blank" className={base}>
+            <BsGithub className={iconClass} />
+            <span className={labelClass}>GitHub</span>
+          </a>)
+      }
 
-      <a href={project.github} target="_blank" className={base}>
-        <BsGithub className={iconClass} />
-        <span className={labelClass}>GitHub</span>
-      </a>
 
-      {project.demo &&(
+      {project.demo && (
         <a href={project.demo} target="_blank" className={base}>
-        <ExternalLink className={iconClass} />
-        <span className={labelClass}>Demo</span>
-      </a>
+          <ExternalLink className={iconClass} />
+          <span className={labelClass}>Demo</span>
+        </a>
       )}
     </div>
   );

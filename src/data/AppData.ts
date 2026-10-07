@@ -1,16 +1,19 @@
-import { GitBranchIcon } from "lucide-react";
+import { GitBranchIcon, BrainCircuitIcon } from "lucide-react";
 import type { ComponentType } from "react";
 import { BiLogoSpringBoot } from "react-icons/bi";
 import { FaJava } from "react-icons/fa";
 import { PiAndroidLogoBold, PiAngularLogoBold } from "react-icons/pi";
-import { SiGithub, SiGmail, SiJenkins, SiLinkedin, SiNextdotjs, SiNodedotjs, SiReact, SiUnity } from "react-icons/si";
+import { SiGithub, SiGmail, SiJenkins, SiLinkedin, SiNextdotjs, SiNodedotjs, SiReact, SiUnity, SiN8N } from "react-icons/si";
 import { TbBrandCSharp, TbBrandKotlin, TbBrandTypescript } from "react-icons/tb";
 import profilePicture from "/assets/imgs/profilePicture.webp";
 import AngularHiberus from "/assets/pdfs/certifications/Angular_Hiberus.pdf?url";
 import HeroesHiberusProgram from "/assets/pdfs/certifications/Heroes_Hiberus_Program.pdf?url";
 import ReactNextUdemy from "/assets/pdfs/certifications/React_Next_Udemy.pdf?url";
 import designItImg from "/assets/imgs/projects/designIt/designIt.webp";
+import wingmanArchitectureImg from "/assets/imgs/projects/wingman/wingmanArchitectureImg.webp";
+import wingmanConversationImg from "/assets/imgs/projects/wingman/wingmanConversationImg.webp";
 import portfolioImg from "/assets/imgs/projects/portfolio/portfolio.webp";
+import wingmangPdf from "/assets/pdfs/projects/wingman/Wingman_Documentation.pdf?url";
 import cvPdf from "/assets/pdfs/personal/Angel_Paredes_Ballesteros_CV.pdf?url";
 import type { MenuItem } from "../pages/mainPage/components/CelticMenu";
 import type { Achievement, JourneyItem, Project } from "../types";
@@ -58,7 +61,39 @@ export const journeyData: JourneyItem[] = [
 
 
 export const projectsData: Project[] = [
+    {
+        id: "wingman",
+        title: "Wingman",
+        introduction: [
+            "Wingman is an AI-powered lead qualification assistant designed to automate the first stages of the sales process. It holds natural conversations with potential customers, collects the required information step by step, evaluates whether a lead meets the defined requirements, and schedules a commercial follow-up when the lead is qualified.",
 
+            "The system is built around n8n and an LLM accessed through OpenRouter. Instead of allowing the model to directly manipulate business data, Wingman uses dedicated tools to search existing leads, persist new information as soon as it is received, and update the final lead status in Monday.com. The same conversational logic can be reused across different communication channels such as Telegram and WhatsApp.",
+
+            "I developed this project mainly as a way to get deeper into AI optimization and LLM-based automation. It gave me the opportunity to experiment with prompt design, conversational memory, tool calling, structured workflows and techniques for reducing unreliable AI behaviour by separating probabilistic reasoning from deterministic operations."
+        ],
+
+        technologies: [
+            "n8n",
+            "AI Agents",
+        ],
+
+        learnings: [
+            "Designed an AI agent capable of combining natural conversation with deterministic business workflows",
+            "Implemented tool calling to separate LLM reasoning from CRM operations and data persistence",
+            "Worked with conversational memory and structured qualification stages to maintain context across multiple interactions",
+            "Explored prompt optimization, model selection and workflow design to reduce unnecessary LLM calls and improve reliability",
+            "Built a multi-channel architecture where different messaging platforms share the same AI and CRM logic"
+        ],
+
+        images: [
+            wingmanConversationImg,
+            wingmanArchitectureImg
+
+        ],
+        demo: wingmangPdf
+
+    }
+    ,
     {
         id: "design-it",
         title: "Design It",
@@ -102,7 +137,6 @@ export const projectsData: Project[] = [
         ],
         github: "https://github.com/Zerotss/Portfolio"
     }
-
 
 ]
 export const achievements: Achievement[] = [
@@ -315,6 +349,27 @@ export const techMap: Record<
             border: "border-gray-200/50",
             icon: "text-gray-600",
             shadow: "0 4px 20px rgba(107,114,128,0.2)",
+        },
+    },
+    "AI Agents": {
+        icon: BrainCircuitIcon,
+        colors: {
+            from: "from-violet-50",
+            to: "to-purple-100",
+            border: "border-violet-200/50",
+            icon: "text-violet-600",
+            shadow: "0 4px 20px rgba(124,58,237,0.2)",
+        },
+    },
+
+    n8n: {
+        icon: SiN8N,
+        colors: {
+            from: "from-rose-50",
+            to: "to-orange-100",
+            border: "border-rose-200/50",
+            icon: "text-rose-500",
+            shadow: "0 4px 20px rgba(244,63,94,0.2)",
         },
     },
 };
