@@ -3,7 +3,7 @@ import { X } from "lucide-react";
 import { useEffect } from "react";
 import type { Project } from "../../../../types";
 import Tag from "../../components/Tag";
-import ImageCarousel from "./carousel/ImageCarrousel";
+import ProjectImageGallery from "./carousel/ProjectImageGallery";
 
 interface ProjectDetailsDrawerProps {
     project: Project | null;
@@ -16,11 +16,12 @@ export default function ProjectDetailsDrawer({
 }: ProjectDetailsDrawerProps) {
 
     useEffect(() => {
-        if (!project) {
-            document.body.style.overflow = "auto"
-            return;
-        }
-        document.body.style.overflow = project ? "hidden" : "";
+        if (!project) return;
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = "hidden";
+        return () => {
+            document.body.style.overflow = previousOverflow;
+        };
     }, [project]);
     return (
         <AnimatePresence>
@@ -81,7 +82,7 @@ export default function ProjectDetailsDrawer({
                                     ))}
                                 </div>
 
-                                <ImageCarousel images={project.images} />
+                                <ProjectImageGallery key={project.title} images={project.images} title={project.title} />
 
                                 {/* LEARNINGS */}
                                 <h4 className="font-light text-[clamp(1.5rem,2.5vw,1.9rem)] text-cyan-700 drop-shadow-sm">
