@@ -13,6 +13,8 @@ import designItImg from "/assets/imgs/projects/designIt/designIt.webp";
 import wingmanArchitectureImg from "/assets/imgs/projects/wingman/wingmanArchitectureImg.webp";
 import wingmanConversationImg from "/assets/imgs/projects/wingman/wingmanConversationImg.webp";
 import portfolioImg from "/assets/imgs/projects/portfolio/portfolio.webp";
+import motionpadControllerImg from "/assets/imgs/projects/motionpad/controller.webp";
+import motionpadConsoleImg from "/assets/imgs/projects/motionpad/console.webp";
 import wingmangPdf from "/assets/pdfs/projects/wingman/Wingman_Documentation.pdf?url";
 import cvPdf from "/assets/pdfs/personal/Angel_Paredes_Ballesteros_CV.pdf?url";
 import type { MenuItem } from "../pages/mainPage/components/CelticMenu";
@@ -61,6 +63,35 @@ export const journeyData: JourneyItem[] = [
 
 
 export const projectsData: Project[] = [
+    {
+        id: "motionpad",
+        title: "MotionPad",
+        introduction: [
+            "MotionPad is an open-source Android app that turns phones into motion controllers for the Dolphin emulator. I built it to dock my Android handheld, launch Just Dance on the TV and let friends join using their phones as Wii Remotes.",
+
+            "The same app runs as a console receiver or a phone controller, combining motion input, touch controls and remembered pairing over Wi-Fi. A local receiver keeps Dolphin connected to a stable address, avoiding manual IP changes when switching networks.",
+
+            "Built with React Native, TypeScript and native Kotlin modules, the project connects a mobile interface with Android sensors, a background receiver service and Dolphin configuration. It supports two players, automatic Wii Remote slot setup and a freeze mode that keeps motion input active."
+        ],
+        technologies: [
+            "React",
+            "TypeScript",
+            "Kotlin"
+        ],
+        learnings: [
+            "Integrated React Native with native Kotlin modules for Android sensors, background services and configuration file access",
+            "Implemented UDP communication and DSU integration to transmit button presses and motion data to Dolphin",
+            "Designed a pairing flow that keeps emulator configuration stable when phone IP addresses change",
+            "Handled simultaneous touch gestures and independent player connections for two-phone sessions",
+            "Improved usability through device testing, persistent pairing and automated Dolphin setup"
+        ],
+        images: [
+            motionpadControllerImg,
+            motionpadConsoleImg
+        ],
+        github: "https://github.com/Zerotss/MotionPad",
+        demo: ""
+    },
     {
         id: "wingman",
         title: "Wingman",
