@@ -46,7 +46,7 @@ The project emphasizes clean component architecture, reusable UI patterns, smoot
 
 ## Demo
 <p align="center">
-  <a href="https://zerotss.github.io/Portfolio/">
+  <a href="https://zerotss.github.io/portfolio/">
       <img src="public/assets/imgs/webIcon.ico" alt="Design It Demo" width="300" >
   </a>
 </p>

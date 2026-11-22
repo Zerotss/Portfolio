@@ -166,7 +166,7 @@ export const projectsData: Project[] = [
         images: [
             portfolioImg
         ],
-        github: "https://github.com/Zerotss/Portfolio"
+        github: "https://github.com/Zerotss/portfolio"
     }
 
 ]
